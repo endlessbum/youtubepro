@@ -253,6 +253,15 @@ adb connect <ip_адрес_устройства>
 gradlew clean installStstableDebug
 ```
 
+> [!NOTE]  
+> **Сборка на Windows из пути с кириллицей:** плагин protobuf падает с ошибкой `Could not make proto path relative` — protoc не понимает не-ASCII пути. Обход — подставной диск с ASCII-путём (монтируйте **родительский** каталог: корень диска Gradle как папку проекта не принимает):
+> ```
+> subst Y: "E:\Серый\Проекты"
+> cd Y:\youtube
+> gradlew assembleStstableDebug
+> ```
+> Флаг `android.overridePathCheck=true` уже добавлен в `gradle.properties`. Если демон Gradle падает на этапе dex-инга (`daemon disappeared unexpectedly`), завершите висящие процессы java и повторите сборку.
+
 
 ## Видеокодеки
 
