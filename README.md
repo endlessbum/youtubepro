@@ -4,25 +4,7 @@
 
 ---
 
-[<img src="images/badge_fdroid.png" alt="Доступно на F-Droid" height="80">](https://f-droid.org/packages/app.smarttube.fdroid/)
-[<img src="images/badge_github.png" alt="Доступно на GitHub" height="80">](https://github.com/yuliskov/SmartTube/releases)
-
-# Важное объявление о приложении
-
-Моя среда разработки была заражена неизвестным вредоносным ПО, из-за чего некоторые сборки могли быть затронуты. Обнаружив проблему, я обезопасил всё с помощью полной очистки диска, восстановил чистое окружение, и теперь все сборки проверяются через VirusTotal. Версия для F-Droid также будет проверена перед выпуском.
-
-Публичные ключи могли быть скомпрометированы, поэтому я сообщаю об этой проблеме. Новую версию и новый публичный ключ можно скачать ниже, там же приведены инструкции по восстановлению резервных копий.
-
-Дополнительных действий не требуется, поскольку приложение использует **одноразовые коды подключения**. У таких кодов очень ограниченные права (например, они не могут изменить ваш пароль). Тем не менее, при желании вы можете отозвать доступ для полного спокойствия.
-
-# Как отозвать доступ:
-
-1. Откройте [myaccount.google.com/security](https://myaccount.google.com/security)
-2. Найдите раздел **«Подключения к сторонним приложениям и сервисам»** (Your connections to third-party apps & services)
-3. Нажмите **«Посмотреть все подключения»** и найдите **YouTube TV** или **Google Диск**
-4. Выберите приложение → **«Удалить доступ»**
-
-Пожалуйста, держите встроенные функции безопасности включёнными, чтобы оставаться защищёнными.
+<p align="center"><img src="./images/app_icon.png" width="160" alt="Логотип YouTubePro"></p>
 
 # YouTubePro
 
@@ -51,7 +33,7 @@ YouTubePro — бесплатный медиаплеер с открытым и�
 
 **Есть вопросы?** Сначала воспользуйтесь поиском (Ctrl+F или ⌘F) по этому ридми!
 
-[**Установка**](#установка) | [**Сайт**](https://smarttubeapp.github.io) | [**Участники**](#участники) | [**Пожертвования**](#пожертвования) | [**FAQ**](#faq) | [Поддержка / чат](#поддержка) | [Сборка](#сборка) | [Перевести приложение](https://jtbrinkmann.de/tools/android-strings.xml-translator.html) | [Список изменений](https://t.me/s/SmartTubeNewsEN) | [Ответственность](#ответственность)
+[**Установка**](#установка) | [**Участники**](#участники) | [**FAQ**](#faq) | [Поддержка / чат](#поддержка) | [Сборка](#сборка) | [Ответственность](#ответственность)
 
 
 ## Поддержка устройств
@@ -64,26 +46,24 @@ YouTubePro — бесплатный медиаплеер с открытым и�
 
 ## Установка
 
-> [видео установки](images/new/zPV0imF.mp4) (примечание: ссылка для скачивания изменилась на `kutt.to/stn_beta` или `kutt.to/stn_stable`)
+> [видео установки](images/new/zPV0imF.mp4)
 
-**Не** скачивайте YouTubePro из **магазинов приложений**, с APK-сайтов или блогов; там файлы загружены посторонними людьми и могут содержать вредоносное ПО или рекламу. YouTubePro официально не публикуется ни в одном магазине приложений.
+**Не** скачивайте YouTubePro из **магазинов приложений**, с APK-сайтов или блогов; там файлы загружены посторонними людьми и могут содержать вредоносное ПО или рекламу. Официальный источник — раздел [**Releases**](https://github.com/endlessbum/youtubepro/releases) этого репозитория.
 
 Есть **бета-релиз** (рекомендуется) и **стабильный релиз**. Бета быстрее стабильной версии получает новые функции и исправления.
 
 Установить приложение можно любым из следующих способов:
 
-- (**Проще всего**) Установите на Android TV [Downloader by AFTVnews](https://www.aftvnews.com/downloader/), откройте его и введите `kutt.to/stn_beta` или `kutt.to/stn_stable`, затем прочитайте, поймите и подтвердите предупреждения безопасности. (<small>Также можно ввести [**79015**](https://aftv.news/79015) (для беты) или [**28544**](https://aftv.news/28544) (для стабильной версии), но это требует дополнительного шага — установки браузерного дополнения AFTVnews Downloader, если оно ещё не установлено.</small>)
+- (**Проще всего**) Установите на Android TV [Downloader by AFTVnews](https://www.aftvnews.com/downloader/), откройте его и введите прямую ссылку на APK из [раздела Releases](https://github.com/endlessbum/youtubepro/releases), затем прочитайте, поймите и подтвердите предупреждения безопасности.
 - Установите на Android TV приложение для передачи файлов, скачайте APK на телефоне или компьютере и передайте его на телевизор (например, [_Send Files to TV_](https://sendfilestotv.app/) из Google Play Store / Amazon AppStore)
 - Скачайте APK на USB-накопитель, вставьте его в телевизор и откройте через файловый менеджер из Google Play Store / Amazon AppStore (например, [_FX File Explorer_](https://play.google.com/store/apps/details?id=nextapp.fx) или [_X-plore_](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)). Предустановленный файловый менеджер Android не подходит! Не используйте захламлённый рекламой _FileCommander_.
 - Если вы опытный пользователь, можно установить приложение через ADB. [руководство](https://fossbytes.com/side-load-apps-android-tv/#h-how-to-sideload-apps-on-your-android-tv-using-adb) | [альтернативное руководство](https://www.aftvnews.com/sideload/)
 
 **Устранение неполадок:** смотрите примечания к конкретным устройствам ниже. Если установка не удалась, либо **закончилось место на диске**, либо APK-файл скачался некорректно; освободите место и попробуйте скачать снова. Если приложение установилось, но падает при запуске — убедитесь, что оно установлено во внутреннюю память, а не на SD-карту / внешнее хранилище.
 
-**В приложении есть встроенный механизм обновления** со списком изменений. Все релизы и **changelog** также доступны в [Telegram-канале @SmartTubeNewsEN](https://t.me/s/SmartTubeNewsEN) (читается без аккаунта) или на [GitHub](https://github.com/yuliskov/SmartTube/releases/).
+**В приложении есть встроенный механизм обновления** со списком изменений. Все релизы также доступны в [разделе Releases](https://github.com/endlessbum/youtubepro/releases).
 
-> последняя [**бета-версия**](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk)
->
-> последняя [стабильная версия](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk)
+> Последние [**бета-** и **стабильную** версии](https://github.com/endlessbum/youtubepro/releases) скачивайте в разделе Releases.
 
 
 ### Установка (Chromecast с Google TV)
@@ -158,8 +138,6 @@ YouTubePro включает необязательную интеграцию Sp
 3. откройте приложение YouTube на телефоне, перейдите в настройки > Общие > смотреть на телевизоре
 4. нажмите _подключить по ТВ-коду_ и введите код с экрана телевизора
 
-[**Руководство со скриншотами**](https://t.me/SmartTubeEN/8514)
-
 Из-за технических ограничений перед трансляцией нужно открыть приложение на телевизоре; YouTubePro не может автоматически разбудить телевизор.
 
 Если вы хотите, чтобы отправка с телефона также будила телевизор и запускала YouTubePro, можно воспользоваться сторонним приложением [TubeBeam](https://github.com/jagjordi/tubebeam). Оно добавляет пункт _Отправить на ТВ_ в системное меню «Поделиться» и отправляет ссылку на телевизор через ADB вместо трансляции (требуется включить _Отладка по USB_ / _Отладка по сети_ в параметрах разработчика телевизора).
@@ -182,57 +160,33 @@ YouTubePro поддерживает воспроизведение видео в
 **На Amazon Fire TV**: 
 
 1. Удалите оригинальное приложение YouTube (root не требуется)
-2. Скачайте и установите приложение Amazon Bridge для YouTubePro: https://kutt.to/stn_bridge_amazon (например, через _Downloader by AFTVnews_)
+2. Скачайте и установите Amazon Bridge для YouTubePro из [раздела Releases](https://github.com/endlessbum/youtubepro/releases) (например, через _Downloader by AFTVnews_)
 
 
 **На Google Chromecast с Google TV**: 
 
 1. Удалите оригинальное приложение YouTube (root не требуется)
-2. Скачайте и установите приложение ATV Bridge для YouTubePro: https://kutt.to/stn_bridge_atv (например, через _Downloader by AFTVnews_)
+2. Скачайте и установите ATV Bridge для YouTubePro из [раздела Releases](https://github.com/endlessbum/youtubepro/releases) (например, через _Downloader by AFTVnews_)
 
 
 **На всех остальных Android-устройствах**, к сожалению, требуется root:
 
 1. Получите root-доступ (найдите руководство для вашего устройства)
 2. Удалите официальное приложение YouTube с помощью root (`adb shell pm uninstall com.google.android.youtube.tv`)
-3. Скачайте и установите приложение ATV Bridge для YouTubePro: https://kutt.to/stn_bridge_atv (например, через _Downloader by AFTVnews_)
+3. Скачайте и установите ATV Bridge для YouTubePro из [раздела Releases](https://github.com/endlessbum/youtubepro/releases) (например, через _Downloader by AFTVnews_)
 
 ## Участники
 
-Основные участники проекта:
+Основные участники оригинального SmartTube:
 
 - [@pixkk](https://github.com/pixkk): стриминг SABR, генерация TV PoToken/Challenge 
 - [@Jupiops](https://github.com/Jupiops): поддержка SABR CDN
 
-## Пожертвования
-
-Если вы хотите поддержать разработку — с радостью примите чашечку кофе :)
-
-- **PayPal (основной)**: firsth<!-- abc@def -->ash@gmai<!-- @abc.com -->l.com  
-- [**Patreon (альтернатива, бесплатно)**](https://www.patreon.com/smarttube)
-- **BTC**: 1JAT5VVWarVBkpVbNDn8UA8HXNdrukuBSx  
-- **LTC**: ltc1qgc24eq9jl9cq78qnd5jpqhemkajg9vudwyd8pw  
-- **ETH**: 0xe455E21a085ae195a097cd4F456051A9916A5064  
-- **ETC**: 0x209eCd33Fa61fA92167595eB3Aea92EE1905c815  
-- **TRX**: TJNPY794aSGZf3WGHTna2VCWm2G5Yua7E8  
-- **USDT (TRC20)**: TJNPY794aSGZf3WGHTna2VCWm2G5Yua7E8  
-- **USDT (BEP20)**: 0x64B28da787BE6ac5889D276A5638d4f077840eC5  
-- **USDT (ERC20)**: 0xe455e21a085ae195a097cd4f456051a9916a5064   
-- **TON**: UQAc9zgnnzwS8yb5wxAu5CB0RddmjPBjWI-n46oQ7XfCQrgI  
-- **XMR**: 48QsMjqfkeW54vkgKyRnjodtYxdmLk6HXfTWPSZoaFPEDpoHDwFUciGCe1QC9VAeGrgGw4PKNAksX9RW7myFqYJQDN5cHGT    
-
-
 ## Поддержка
 
-**Сначала, пожалуйста, загляните в [FAQ](#faq)!** Также хотя бы коротко просмотрите недавнюю историю чата.
+**Сначала, пожалуйста, загляните в [FAQ](#faq)!**
 
-Сообщить о проблеме можно в нашей Telegram-группе или через [issue-трекер на GitHub](https://github.com/yuliskov/SmartTube/issues) (нужен аккаунт).
-
-- **Telegram-группа (международная)**: [@SmartTubeEN](http://t.me/SmartTubeEN)  
-- **Discord-группа (международная)**: [SmartTube Official](https://discord.gg/Wt8HDDej5z)  
-- **Telegram-группа (RU/UA)**: [@SmartTubeUA](http://t.me/SmartTubeUA)
-
-Международная группа общается **только на английском**. Но не переживайте, если ваш английский не идеален, — у нас дружное международное сообщество.
+Сообщить о проблеме можно через [issue-трекер на GitHub](https://github.com/endlessbum/youtubepro/issues).
 
 
 ## Команда
@@ -378,7 +332,7 @@ SUCH DAMAGES.
 - Есть ТВ-пульт, геймпад или клавиатура
   **Сенсорный ввод не поддерживается.** Прокрутка мышью/тачпадом тоже. Полноценно использовать YouTubePro только с сенсорным вводом или мышью нельзя.
 
-Некоторые пользователи сообщали об успехе (в том числе на [мультимедиа-системе автомобиля](https://t.me/SmartTubeEN/6060)). **Делитесь своими историями успеха с нами.**
+Некоторые пользователи сообщали об успехе (в том числе на мультимедиа-системе автомобиля). **Делитесь своими историями успеха с нами.**
 
 
 ### В: Ошибки «неизвестный кодек» / «не удаётся скачать видео»
@@ -447,7 +401,7 @@ SUCH DAMAGES.
 
 О: Переключайтесь между режимами автовоспроизведения кнопкой «повтор» 🔁
 
-[![скриншот кнопки повтора](images/new/V3GHGvWprmdE1w.jpg)](https://t.me/SmartTubeEN/24953)
+![скриншот кнопки повтора](images/new/V3GHGvWprmdE1w.jpg)
 
 
 ### В: Как убрать нерелевантные мне рекомендованные видео (например, новости)?

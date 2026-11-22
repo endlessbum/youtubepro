@@ -4,33 +4,14 @@
 
 ---
 
-[<img src="images/badge_fdroid.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/app.smarttube.fdroid/)
-[<img src="images/badge_github.png" alt="Get it on GitHub" height="80">](https://github.com/yuliskov/SmartTube/releases)
+<p align="center"><img src="./images/app_icon.png" width="160" alt="YouTubePro logo"></p>
 
-# Important announcement about the app
-
-My development environment was infected by unknown malicious software, as a result of which a few builds may have been affected. Once the issue was detected, I secured everything with a full disk wipe, restored a clean setup, and now all builds are scanned with VirusTotal. The F-Droid version will also be verified before release.
-
-Public keys may have been compromised, which is why I am sharing this issue. You can download the new version and the new public key below, and instructions for restoring backups are provided.
-
-No extra actions are required since the app uses **one-time connection codes**. These codes have very limited permissions (for example, they cannot change your password). Still, you can revoke them if you want full peace of mind.
-
-# How to revoke access:
-
-1. Open [myaccount.google.com/security](https://myaccount.google.com/security)
-2. Find **“Your connections to third-party apps & services”**
-3. Tap **“See all connection”** and locate **YouTube TV** or **Google Drive**
-4. Select the app → **“Remove access”**
-
-Please keep built-in security features enabled to stay protected.
-
-# SmartTube
+# YouTubePro
   
-<!-- <img width="100" src="https://github.com/yuliskov/SmartTube/blob/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png" alt="logo"/> -->
 
 ![The app screenshot](./images/browse_home.png)
 
-SmartTube is a free and open-source media client for Android TVs and TV boxes. It allows you to browse and play content from various public sources in a TV-optimized interface.
+YouTubePro is a free and open-source media client for Android TVs and TV boxes. It allows you to browse and play content from various public sources in a TV-optimized interface.
 
 ### ✅ Features
 - Clean interface 
@@ -53,12 +34,12 @@ Give it a try!
 
 **Do you have any question?** Ctrl+F or ⌘F this readme first!
 
-[**Installation**](#installation) | [**Site**](https://smarttubeapp.github.io) | [**Contributors**](#contributors) | [**Donation**](#donation) | [**FAQ**](#faq) | [Support / Chat](#support) | [Build](#build) | [Translate the app](https://jtbrinkmann.de/tools/android-strings.xml-translator.html) | [Changelog](https://t.me/s/SmartTubeNewsEN) | [Liability](#liability)
+[**Installation**](#installation) | [**Contributors**](#contributors) | [**FAQ**](#faq) | [Support / Chat](#support) | [Build](#build) | [Liability](#liability)
 
 
 ## Device support
 > [!IMPORTANT]  
-> Starting in October 2025 new Amazon FireTV devices no longer run Android under the hood. SmartTube will **not** be compatible with the Fire Stick 4k Select and newer devices which run Amazon's own VegaOS.
+> Starting in October 2025 new Amazon FireTV devices no longer run Android under the hood. YouTubePro will **not** be compatible with the Fire Stick 4k Select and newer devices which run Amazon's own VegaOS.
 
 ![Device support image](images/new/compatibility.png)
 * **Supported:** all Android TVs and TV boxes (incl. All FireTV devices released before Oct. 2025, NVIDIA Shield & Chromecast with Google TV), even older ones with Android 4.3 (Jelly Bean).
@@ -66,26 +47,24 @@ Give it a try!
 
 ## Installation
 
-> [video of the installation](images/new/zPV0imF.mp4) (note: download url changed to `kutt.to/stn_beta` or `kutt.to/stn_stable`)
+> [video of the installation](images/new/zPV0imF.mp4)
 
-**Do not** download SmartTube from any **app store**, APK websites or blogs; these were uploaded by other people and may contain malware or ads. SmartTube is not officially published on any app store.
+**Do not** download YouTubePro from any **app store**, APK websites or blogs; these were uploaded by other people and may contain malware or ads. The official source is the [**Releases**](https://github.com/endlessbum/youtubepro/releases) section of this repository.
 
 There is a **beta release** (recommended) and a **stable release**. Beta gets new features and bugfixes faster than the stable release.
 
 You can use either of the following methods to install the app:
 
-- (**Easiest**) Install [Downloader by AFTVnews](https://www.aftvnews.com/downloader/) on your Android TV, open it and enter `kutt.to/stn_beta` or `kutt.to/stn_stable`, then read, understand and confirm the security prompts. (<small>You can also enter [**79015**](https://aftv.news/79015) (for beta) or [**28544**](https://aftv.news/28544) (for stable), but this requires an extra step to install the AFTVnews Downloader browser addon if you haven't already.</small>)
+- (**Easiest**) Install [Downloader by AFTVnews](https://www.aftvnews.com/downloader/) on your Android TV, open it and enter a direct APK link from the [Releases section](https://github.com/endlessbum/youtubepro/releases), then read, understand and confirm the security prompts.
 - Install a file transfer app on your Android TV, download the APK on your phone or computer and transfer it to your TV (e.g. [_Send Files to TV_](https://sendfilestotv.app/) from the Google Play Store / Amazon AppStore)
 - Download the APK onto a USB stick, put the USB stick into your TV and use a file manager app from the Google Play Store / Amazon AppStore (e.g. [_FX File Explorer_](https://play.google.com/store/apps/details?id=nextapp.fx) or [_X-plore_](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)). Android's preinstalled file manager does not work! Do **not** get the ad-infested _FileCommander_.
 - If you are an advanced user, you can install it using ADB. [guide](https://fossbytes.com/side-load-apps-android-tv/#h-how-to-sideload-apps-on-your-android-tv-using-adb) | [alternative guide](https://www.aftvnews.com/sideload/)
 
 **Troubleshooting:** See device specific notes below. If installation fails, either your **disk space is full** or the APK file didn't download correctly; clear up space and try downloading again. If the app installed, but crashes when opening, make sure to install it to internal memory, not to an SD card / external storage.
 
-**The app has a built-in updater** with changelog. You can also find all releases and the **changelog** on the [Telegram channel @SmartTubeNewsEN](https://t.me/s/SmartTubeNewsEN) (readable without account) or on [Github](https://github.com/yuliskov/SmartTube/releases/).
+**The app has a built-in updater** with changelog. All releases are also available in the [Releases section](https://github.com/endlessbum/youtubepro/releases).
 
-> latest [**beta download**](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk)
->
-> latest [stable download](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk)
+> Download the latest [**beta** or **stable** version](https://github.com/endlessbum/youtubepro/releases) from the Releases section.
 
 
 ### Installation (Chromecast with Google TV)
@@ -109,21 +88,21 @@ After this, you can follow the [general installation guide](#installation) above
 ### Installation (Xiaomi devices with Chinese firmware)
 
 Xiaomi's **Chinese firmware** might block the installation **of the beta version**. The international firmware is not affected. Solutions:
-1. Use SmartTube's **stable version** instead (**recommended**)
+1. Use YouTubePro's **stable version** instead (**recommended**)
 2. Use the international firmware for your device
-3. (if your device is from 2020 or before) You can do a factory reset and then install SmartTube beta before doing any system updates. You can then safely update your system, SmartTube should continue working.
+3. (if your device is from 2020 or before) You can do a factory reset and then install YouTubePro beta before doing any system updates. You can then safely update your system, YouTubePro should continue working.
 
 
 ### Updating
 
-The app has a built-in updater. You only need to follow the installation procedure **once**. A few seconds after launching SmartTube, it will notify you if there is any update and also show a changelog. You can disable automatic update checks or manually update in the settings under "about".
+The app has a built-in updater. You only need to follow the installation procedure **once**. A few seconds after launching YouTubePro, it will notify you if there is any update and also show a changelog. You can disable automatic update checks or manually update in the settings under "about".
 
 If the installation fails, either your **disk space is full** or the update didn't download correctly; clear up space and try updating again (_Settings > About > Check for updates_).
 
 
 ## Compatibility
 
-SmartTube requires Android 4.3 or above. It does not work on non-Android devices (incl. LG or Samsung TVs). On unsupported TVs, you can use a TV stick or TV box. Though this app technically runs on smartphones and tablets, it is not optimized for such and offers no official support!
+YouTubePro requires Android 4.3 or above. It does not work on non-Android devices (incl. LG or Samsung TVs). On unsupported TVs, you can use a TV stick or TV box. Though this app technically runs on smartphones and tablets, it is not optimized for such and offers no official support!
 
 It has been successfully tested on TVs, TV boxes and TV sticks that are based on Android, including:
 
@@ -139,37 +118,35 @@ It has been successfully tested on TVs, TV boxes and TV sticks that are based on
 
 ### Interface
 
-SmartTube focuses on a clean and distraction-free interface for watching media content. The app does not include advertising UI elements and focuses on playback and browsing experience instead.
+YouTubePro focuses on a clean and distraction-free interface for watching media content. The app does not include advertising UI elements and focuses on playback and browsing experience instead.
 
 
 ### SponsorBlock
 
-SmartTube includes optional SponsorBlock integration. From the [SponsorBlock website](https://sponsor.ajay.app/):
+YouTubePro includes optional SponsorBlock integration. From the [SponsorBlock website](https://sponsor.ajay.app/):
 
 > SponsorBlock is an open-source crowdsourced browser extension and open API for **skipping sponsor segments** in YouTube videos. [...] the extension automatically skips sponsors **it knows about** using a privacy preserving query system. It also supports skipping **other categories**, such as intros, outros and reminders to subscribe [and non-music parts in music videos].
 
-You can select which categories you want to skip in the settings. Unlike the browser addon, in SmartTube you cannot submit new segments (TVs and TV remotes aren't great devices for such precise operations). Note that SponsorBlock is a free and voluntary project based on user submissions, so don't expect it to 100% work every time. Sometimes, sponsor segments are not yet submitted to the database, sometimes the SponsorBlock servers are offline/overloaded.
+You can select which categories you want to skip in the settings. Unlike the browser addon, in YouTubePro you cannot submit new segments (TVs and TV remotes aren't great devices for such precise operations). Note that SponsorBlock is a free and voluntary project based on user submissions, so don't expect it to 100% work every time. Sometimes, sponsor segments are not yet submitted to the database, sometimes the SponsorBlock servers are offline/overloaded.
 
 
 ### Casting
 
-To cast videos from your phone (or other devices), you must link that device to your TV. Unlike the original YouTube app, SmartTube does not automatically show up when you are in the same wifi network. How to link your smartphone and TV:
+To cast videos from your phone (or other devices), you must link that device to your TV. Unlike the original YouTube app, YouTubePro does not automatically show up when you are in the same wifi network. How to link your smartphone and TV:
 
-1. open SmartTube and go to settings
+1. open YouTubePro and go to settings
 2. go to "Remote control" (2nd option)
 3. open your YouTube app on your phone, go to settings > General > watch on TV
 4. click on _connect using TV-code_ and enter the code from your TV
 
-[**Screenshot guide**](https://t.me/SmartTubeEN/8514)
+Due to technical limitations, you need to open the app on the TV before casting; YouTubePro cannot automatically wake up the TV.
 
-Due to technical limitations, you need to open the app on the TV before casting; SmartTube cannot automatically wake up the TV.
-
-If you want sharing from your phone to also wake up the TV and launch SmartTube, you can use the third-party app [TubeBeam](https://github.com/jagjordi/tubebeam). It adds a _Send to TV_ entry to Android's share sheet and sends the link to the TV over ADB instead of casting (requires _USB debugging_ / _Network debugging_ to be enabled in the TV's developer options).
+If you want sharing from your phone to also wake up the TV and launch YouTubePro, you can use the third-party app [TubeBeam](https://github.com/jagjordi/tubebeam). It adds a _Send to TV_ entry to Android's share sheet and sends the link to the TV over ADB instead of casting (requires _USB debugging_ / _Network debugging_ to be enabled in the TV's developer options).
 
 
 ### Picture-in-Picture (PiP)
 
-SmartTube supports playing videos in PiP mode. This needs to be enabled under _Settings > General > Background playback > Picture in picture_. The video will go into PiP mode when you press home while playing a video, and also when you press _back_ if enabled in _Settings > General > Background playback (activation)_.
+YouTubePro supports playing videos in PiP mode. This needs to be enabled under _Settings > General > Background playback > Picture in picture_. The video will go into PiP mode when you press home while playing a video, and also when you press _back_ if enabled in _Settings > General > Background playback (activation)_.
 
 
 ### Adjust Speed
@@ -179,67 +156,43 @@ You can adjust the playback speed pressing the speed-indicator icon (gauge) in t
 
 ### Voice Search
 
-To enable global voice search, an additional app must be installed alongside SmartTube. This _bridge app_ allows the system voice search to open SmartTube instead of the default YouTube app. For this to work, you must uninstall the original YouTube app. We know this sucks, but you can always reinstall it if you change your mind. The _bridge app_ will not show up in your launcher and you cannot launch it directly; it is only used internally by the system's voice search. On some devices, you need to explicitly say "Youtube" when searching (e.g. say "youtube cute cats" instead of just "cute cats").
+To enable global voice search, an additional app must be installed alongside YouTubePro. This _bridge app_ allows the system voice search to open YouTubePro instead of the default YouTube app. For this to work, you must uninstall the original YouTube app. We know this sucks, but you can always reinstall it if you change your mind. The _bridge app_ will not show up in your launcher and you cannot launch it directly; it is only used internally by the system's voice search. On some devices, you need to explicitly say "Youtube" when searching (e.g. say "youtube cute cats" instead of just "cute cats").
 
 **On Amazon Fire TV**: 
 
 1. Uninstall the original YouTube app (no root required)
-2. Download and install the Amazon Bridge SmartTube app: https://kutt.to/stn_bridge_amazon (e.g. via _Downloader by AFTVnews_)
+2. Download and install the Amazon Bridge app for YouTubePro from the [Releases section](https://github.com/endlessbum/youtubepro/releases) (e.g. via _Downloader by AFTVnews_)
 
 
 **On Google Chromecast with Google TV**: 
 
 1. Uninstall the original YouTube app (no root required)
-2. Download and install the ATV Bridge SmartTube app: https://kutt.to/stn_bridge_atv (e.g. via _Downloader by AFTVnews_)
+2. Download and install the ATV Bridge app for YouTubePro from the [Releases section](https://github.com/endlessbum/youtubepro/releases) (e.g. via _Downloader by AFTVnews_)
 
 
 **On all other Android devices**, sadly root is required to enable this:
 
 1. Root your device (search for a guide for your specific device)
 2. Uninstall the official YouTube app using root (`adb shell pm uninstall com.google.android.youtube.tv`)
-3. Download and install the ATV Bridge SmartTube app: https://kutt.to/stn_bridge_atv (e.g. via _Downloader by AFTVnews_)
+3. Download and install the ATV Bridge app for YouTubePro from the [Releases section](https://github.com/endlessbum/youtubepro/releases) (e.g. via _Downloader by AFTVnews_)
 
 ## Contributors
 
-Major contributors to this project:
+Major contributors to the original SmartTube:
 
 - [@pixkk](https://github.com/pixkk): SABR streaming, TV PoToken/Challenge generation 
 - [@Jupiops](https://github.com/Jupiops): SABR CDN support
 
-## Donation
-
-If you want to support my developments you are welcome to buy me a cup of coffee :)
-
-- **PayPal (main)**: firsth<!-- abc@def -->ash@gmai<!-- @abc.com -->l.com  
-- [**Patreon (alternative, free)**](https://www.patreon.com/smarttube)
-- **BTC**: 1JAT5VVWarVBkpVbNDn8UA8HXNdrukuBSx  
-- **LTC**: ltc1qgc24eq9jl9cq78qnd5jpqhemkajg9vudwyd8pw  
-- **ETH**: 0xe455E21a085ae195a097cd4F456051A9916A5064  
-- **ETC**: 0x209eCd33Fa61fA92167595eB3Aea92EE1905c815  
-- **TRX**: TJNPY794aSGZf3WGHTna2VCWm2G5Yua7E8  
-- **USDT (TRC20)**: TJNPY794aSGZf3WGHTna2VCWm2G5Yua7E8  
-- **USDT (BEP20)**: 0x64B28da787BE6ac5889D276A5638d4f077840eC5  
-- **USDT (ERC20)**: 0xe455e21a085ae195a097cd4f456051a9916a5064   
-- **TON**: UQAc9zgnnzwS8yb5wxAu5CB0RddmjPBjWI-n46oQ7XfCQrgI  
-- **XMR**: 48QsMjqfkeW54vkgKyRnjodtYxdmLk6HXfTWPSZoaFPEDpoHDwFUciGCe1QC9VAeGrgGw4PKNAksX9RW7myFqYJQDN5cHGT    
-
-
 ## Support
 
-**Please check the [FAQ](#faq) first!** Also at least have a short look at the recent chat history.
+**Please check the [FAQ](#faq) first!**
 
-You can report in our Telegram group or via [issue tracker on Github](https://github.com/yuliskov/SmartTube/issues) (account required).
-
-- **Telegram group (international)**: [@SmartTubeEN](http://t.me/SmartTubeEN)  
-- **Discord group (international)**: [SmartTube Official](https://discord.gg/Wt8HDDej5z)  
-- **Telegram group (RU/UA)**: [@SmartTubeUA](http://t.me/SmartTubeUA)
-
-The international group is in **English only**. But don't worry if your English is not perfect, we have a friendly international community.
+You can report issues via the [issue tracker on GitHub](https://github.com/endlessbum/youtubepro/issues).
 
 
 ## Team
 
-SmartTube is developed single-handedly; there is no larger team or company behind this. This is an open source, hobby project. Several others have helped with translations, some of which can be seen on [Github](https://github.com/yuliskov/SmartTube/graphs/contributors), some have sent their translations directly to Yurii. There are also helpful people in the support chat.
+YouTubePro is developed single-handedly; there is no larger team or company behind this. This is an open source, hobby project. Several others have helped with translations, some of which can be seen on [Github](https://github.com/yuliskov/SmartTube/graphs/contributors), some have sent their translations directly to Yurii. There are also helpful people in the support chat.
 
 
 ## Build
@@ -248,8 +201,8 @@ SmartTube is developed single-handedly; there is no larger team or company behin
 To build and install debug version, run these commands:
 
 ```
-git clone https://github.com/yuliskov/SmartTube.git
-cd SmartTube
+git clone https://github.com/endlessbum/youtubepro.git
+cd youtubepro
 git submodule update --init
 adb connect <device_ip_address>
 gradlew clean installStstableDebug
@@ -337,15 +290,15 @@ A: Because AV01 is very new, **most** TVs and TV boxes **do not** offer hardware
 If your device has hardware support for a codec, videos using that codec should play smoothly. High resolutions might also be slow in VP9 on cheap TV boxes that don't officially support 4k. Your device probably can play VP9 videos even without hardware support, however this requires a powerful CPU to run smoothly. Fixing AV01 without hardware support is technically possible, but currently not planned and probably not efficient enough.
 
 
-### Q: Can you make SmartTube look like the original app?
+### Q: Can you make YouTubePro look like the original app?
 
-A: Compared to SmartTube's UI, Stock Youtube and YT Kids are far ahead. However, we'd need someone who's skilled and willing to dedicate enough time and energy into making it. And into maintaining it longterm (incl. new features, bug fixes). All of this for free. If you are / got someone like that, please help.
-Not to mention that SmartTube follows Google's official template & recommendations for Android TV apps. It's Google's fault that the template is somewhat ugly. 😂
+A: Compared to YouTubePro's UI, Stock Youtube and YT Kids are far ahead. However, we'd need someone who's skilled and willing to dedicate enough time and energy into making it. And into maintaining it longterm (incl. new features, bug fixes). All of this for free. If you are / got someone like that, please help.
+Not to mention that YouTubePro follows Google's official template & recommendations for Android TV apps. It's Google's fault that the template is somewhat ugly. 😂
 
 
 ### Q: Can the search page be improved?
 
-A: It can be, but it takes someone to do it, similar to the above FAQ-entry. SmartTube is following Google's officially recommended design/template for TV apps and is using the official, preinstalled Android TV keyboard. Sadly, Google did a really bad job regarding the search page and keyboard. Maybe a future SmartTube update can add an embedded keyboard, similar to the original YouTube or other major Android TV apps. Maybe it can improve the looks to be as good or better than in the official YouTube app. But for now, it is the way it is due to lack of time and due to Google's official recommendations being bad.
+A: It can be, but it takes someone to do it, similar to the above FAQ-entry. YouTubePro is following Google's officially recommended design/template for TV apps and is using the official, preinstalled Android TV keyboard. Sadly, Google did a really bad job regarding the search page and keyboard. Maybe a future YouTubePro update can add an embedded keyboard, similar to the original YouTube or other major Android TV apps. Maybe it can improve the looks to be as good or better than in the official YouTube app. But for now, it is the way it is due to lack of time and due to Google's official recommendations being bad.
 
 
 ### Q: Can I install this on a Samsung Tizen TV / LG webOS TV / Roku / iOS / toaster?
@@ -357,7 +310,7 @@ A: No, this only works on **Android** devices. If you look at an Android TV's pr
 
 A: **Big No**. This app is **not** for smartphones, we offer **zero support** for that.
 
-You **can cast** videos **from** your smartphone to a TV / TV box running SmartTube, though. Just use the official YouTube app, [Morphe](https://github.com/MorpheApp) or [ReVanced](https://github.com/ReVanced), see [the casting section](#casting) for more information.
+You **can cast** videos **from** your smartphone to a TV / TV box running YouTubePro, though. Just use the official YouTube app, [Morphe](https://github.com/MorpheApp) or [ReVanced](https://github.com/ReVanced), see [the casting section](#casting) for more information.
 
 **There will not be a phone version.** You can use [Morphe](https://github.com/MorpheApp), [ReVanced](https://github.com/ReVanced), [Pure Tuber](https://play.google.com/store/apps/details?id=free.tube.premium.advanced.tuber), [LibreTube](https://github.com/libre-tube/LibreTube), [NewTube](https://github.com/aleixrodriala/newtube), [NewPipe](https://newpipe.schabi.org), or [NewPipe x SponsorBlock](https://github.com/polymorphicshade/NewPipe#newpipe-x-sponsorblock) instead. Please go to their respective support chats for help.
 
@@ -369,9 +322,9 @@ Yes... maybe.. Requirements:
 - It is an Android device
 - It has a large screen
 - It has a TV remote, controller, or keyboard
-  **Touch input is not supported.** Mouse/touchpad scrolling neither. You cannot properly use SmartTube with only touch or mouse input.
+  **Touch input is not supported.** Mouse/touchpad scrolling neither. You cannot properly use YouTubePro with only touch or mouse input.
 
-Some users reported great success (incl. on a [car entertainment system](https://t.me/SmartTubeEN/6060)). **Please share your success stories with us.**
+Some users reported great success (incl. on a car entertainment system). **Please share your success stories with us.**
 
 
 ### Q: I get "unknown codec" / "can't download video" errors
@@ -399,7 +352,7 @@ A: Your IP address range might be temporarily/permanently blocked by YouTube fro
 
 ### Q: The video is buffering a lot
 
-A: The issue might not be specific to SmartTube, as other unofficial YouTube apps also report this issue. It seems uncommon nowadays, but was very present in the 2nd quarter of 2021. Some users or devices seem to be more affected than others. The official YouTube app & website are apparently only rarely affected. The root cause of the issue is currently unclear, but it appears to be a server-side thing on YouTube's end. Possibly, YouTube is discriminating 3rd party apps.
+A: The issue might not be specific to YouTubePro, as other unofficial YouTube apps also report this issue. It seems uncommon nowadays, but was very present in the 2nd quarter of 2021. Some users or devices seem to be more affected than others. The official YouTube app & website are apparently only rarely affected. The root cause of the issue is currently unclear, but it appears to be a server-side thing on YouTube's end. Possibly, YouTube is discriminating 3rd party apps.
 
 For now, try to see if it helps to:
 
@@ -411,7 +364,7 @@ For now, try to see if it helps to:
 
 ### Q: The debug information says my display is 1080p, but I have a 4k/UHD display!
 
-A: Do not worry, **the debug information is incorrect.** SmartTube works fine even above 1080p and you should be able to see that, when you play a video in 4k or UHD.
+A: Do not worry, **the debug information is incorrect.** YouTubePro works fine even above 1080p and you should be able to see that, when you play a video in 4k or UHD.
 Also do not worry if it says "720p" and you have a 1080p display.
 
 
@@ -424,7 +377,7 @@ A: **It does** (by default). If you set a _video profile_ under settings, that a
 
 ### Q: Can I set a (maximum) resolution by default?
 
-A: SmartTube automatically select the highest available quality for your video, up to a maximum resolution that you can set in the settings under "video profile". If available, SmartTube will pick the selected video profile, or otherwise the next best one available will be used. You can still always change the video profile while watching videos.
+A: YouTubePro automatically select the highest available quality for your video, up to a maximum resolution that you can set in the settings under "video profile". If available, YouTubePro will pick the selected video profile, or otherwise the next best one available will be used. You can still always change the video profile while watching videos.
 
 
 ### Q: Can it set the resolution to "auto", depending on my available bandwidth?
@@ -434,14 +387,14 @@ A: This is planned, but not available yet (sorry 🙇‍♀️). However, you ca
 
 ### Q: Why does it skip video segments?
 
-A: SmartTube has a feature called **SponsorBlock**. You can select which categories should be skipped, if any. See the [SponsorBlock section](#sponsorblock) for more details.
+A: YouTubePro has a feature called **SponsorBlock**. You can select which categories should be skipped, if any. See the [SponsorBlock section](#sponsorblock) for more details.
 
 
 ### Q: How to start the next video automatically / stop after every video?
 
 A: You can switch between different autoplay-modes using the loop-button 🔁
 
-[![screenshot showing the loop-button](images/new/V3GHGvWprmdE1w.jpg)](https://t.me/SmartTubeEN/24953)
+![screenshot showing the loop-button](images/new/V3GHGvWprmdE1w.jpg)
 
 
 ### Q: How to remove recommended videos (e.g. news) that are unrelated to me?
@@ -480,7 +433,7 @@ A: The higher your buffer, the more of a video will be preloaded ahead of your c
 
 ### Q: Can I retain the buffer when seeking back?
 
-A: No, when you seek back (e.g. jump back 5 seconds), SmartTube will have to rebuffer. This might be improved in a future update.
+A: No, when you seek back (e.g. jump back 5 seconds), YouTubePro will have to rebuffer. This might be improved in a future update.
 
 
 ### Q: My device freezes when watching YouTube
@@ -490,17 +443,17 @@ A: That's a firmware or Android issue. If you are using a custom rom, maybe that
 
 ### Q: Can I download videos?
 
-A: Not with SmartTube
+A: Not with YouTubePro
 
 
 ### Q: Can updates be installed automatically?
 
-A: No, this is technically not possible. Only the preinstalled app manager (usually Google PlayStore, Amazon AppStore, etc) has the required permission. All other apps, incl. SmartTube can only show open installation prompt. A workaround using root would be possible, but hasn't been implemented yet.
+A: No, this is technically not possible. Only the preinstalled app manager (usually Google PlayStore, Amazon AppStore, etc) has the required permission. All other apps, incl. YouTubePro can only show open installation prompt. A workaround using root would be possible, but hasn't been implemented yet.
 
 
 ### Q: Can I whitelist ads on some channels?
 
-A: No, this is not possible. SmartTube does not have any code to display ads. Adding this functionality would actually take time and effort, which is instead spent on adding useful features and fixing bugs.
+A: No, this is not possible. YouTubePro does not have any code to display ads. Adding this functionality would actually take time and effort, which is instead spent on adding useful features and fixing bugs.
 
 
 
