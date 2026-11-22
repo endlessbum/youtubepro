@@ -1,0 +1,5 @@
+<resources>
+    <string name="search_label">YouTubePro</string>
+    <string name="settings_description">YouTubePro Videos</string>
+    <string translatable="false" name="search_authority">org.youtubepro.beta</string>
+</resources>

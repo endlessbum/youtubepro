@@ -1,0 +1,5 @@
+<resources translatable="false">
+    <string name="search_label">YouTubePro</string>
+    <string name="settings_description">YouTubePro Videos</string>
+    <string name="search_authority">app.youtubepro.fdroid.search_provider</string>
+</resources>
