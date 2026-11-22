@@ -36,6 +36,9 @@ public class WebProxyDialog {
     private final Handler mProxyTestHandler;
     private final ArrayList<Call> mUrlTests;
     private int mNumTests;
+    // Audit F-07: dialog outcome tracking
+    private Runnable mOnCancel;
+    private boolean mConfirmed;
 
     public WebProxyDialog(Context context) {
         mContext = context;
@@ -53,12 +56,22 @@ public class WebProxyDialog {
     }
 
     public void enable(boolean checked) {
+        enable(checked, null);
+    }
+
+    /**
+     * Audit F-07: the enabled state is applied only after user confirmation in the dialog.
+     * Cancel/back/system-dismiss rolls everything back and fires {@code onCancel},
+     * so the caller can revert its own toggle side effects.
+     */
+    public void enable(boolean checked, Runnable onCancel) {
+        mOnCancel = onCancel;
+
         if (isSupported()) {
-            mProxyManager.saveProxyInfoToPrefs(null, checked);
             if (checked) {
-                // FIXME: If user hit cancel in dialog, proxy remains enabled.
                 showProxyConfigDialog();
             } else {
+                mProxyManager.saveProxyInfoToPrefs(null, false);
                 mProxyManager.configureSystemProxy();
             }
         }
@@ -216,8 +229,9 @@ public class WebProxyDialog {
             } else {
                 Log.d(TAG, "Saving proxy info: " + proxy);
                 mProxyManager.saveProxyInfoToPrefs(proxy, true);
-                // Proxy applied on dismiss
-                //mProxyManager.configureSystemProxy();
+                // Audit F-07: apply immediately (the dismiss listener no longer applies anything)
+                mProxyManager.configureSystemProxy();
+                mConfirmed = true;
                 for (Call call: mUrlTests) call.cancel();
                 mProxyConfigDialog.dismiss();
             }
@@ -236,18 +250,16 @@ public class WebProxyDialog {
         });
 
         mProxyConfigDialog.setOnDismissListener(dialog -> {
-            Proxy proxy = null;
-            try {
-                proxy = validateProxyConfigFields();
-            } catch (IllegalArgumentException e) { // port out of range
-                e.printStackTrace();
-            }
-            if (proxy != null) {
-                Log.d(TAG, "Saving proxy info: " + proxy);
-                // Proxy saved on OK button press
-                //mProxyManager.saveProxyInfoToPrefs(proxy, true);
+            for (Call call: mUrlTests) call.cancel();
+
+            // Audit F-07: no side effects on dismiss. If the user didn't confirm (OK),
+            // roll back to the disabled state instead of keeping a half-configured proxy.
+            if (!mConfirmed) {
+                mProxyManager.saveProxyInfoToPrefs(null, false);
                 mProxyManager.configureSystemProxy();
-                for (Call call: mUrlTests) call.cancel();
+                if (mOnCancel != null) {
+                    mOnCancel.run();
+                }
             }
         });
     }

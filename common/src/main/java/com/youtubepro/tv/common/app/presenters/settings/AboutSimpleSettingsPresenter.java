@@ -10,6 +10,7 @@ import com.youtubepro.tv.common.app.models.playback.ui.UiOptionItem;
 import com.youtubepro.tv.common.app.presenters.AppDialogPresenter;
 import com.youtubepro.tv.common.app.presenters.base.BasePresenter;
 import com.youtubepro.tv.common.app.presenters.dialogs.ATVBridgePresenter;
+import com.youtubepro.tv.common.utils.Utils;
 import com.youtubepro.tv.common.app.presenters.dialogs.AmazonBridgePresenter;
 import com.youtubepro.tv.common.app.presenters.dialogs.AppUpdatePresenter;
 
@@ -33,9 +34,12 @@ public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
 
         AppDialogPresenter settingsPresenter = AppDialogPresenter.instance(getContext());
 
-        appendAutoUpdateSwitch(settingsPresenter);
+        // Audit F-19: hide the updater UI when no update manifest URLs are configured (F-Droid flavor)
+        if (Utils.isUpdaterConfigured(getContext())) {
+            appendAutoUpdateSwitch(settingsPresenter);
 
-        appendUpdateCheckButton(settingsPresenter);
+            appendUpdateCheckButton(settingsPresenter);
+        }
 
         appendInstallBridge(settingsPresenter);
 

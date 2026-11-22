@@ -1,0 +1,30 @@
+{
+  "_comment": "Audit F-13: stub for the F-Droid flavor. The Firebase SDK is NOT included in this flavor (dependencies are flavor-scoped); this file only satisfies the google-services plugin during aggregate builds.",
+  "project_info": {
+    "project_number": "0",
+    "project_id": "youtubepro-fdroid-stub",
+    "storage_bucket": "youtubepro-fdroid-stub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:0:android:0000000000000000000000",
+        "android_client_info": {
+          "package_name": "app.youtubepro.fdroid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA00000000000000000000000000000000"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

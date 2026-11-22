@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.youtubepro.tv.common.app.presenters.SplashPresenter;
 import com.youtubepro.tv.common.app.views.SplashView;
 import com.youtubepro.tv.common.misc.MotherActivity;
+import com.youtubepro.tv.common.utils.Utils;
 
 public class SplashActivity extends MotherActivity implements SplashView {
     private static final String TAG = SplashActivity.class.getSimpleName();
@@ -14,6 +15,9 @@ public class SplashActivity extends MotherActivity implements SplashView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Audit F-03: ask for the notification permission on Android 13+ when needed
+        Utils.verifyNotificationsPermission(this);
 
         mNewIntent = getIntent();
 

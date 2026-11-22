@@ -177,10 +177,25 @@ public class MainApplication extends MultiDexApplication implements Configuratio
         // RuntimeException: Error receiving broadcast Intent { act=android.hardware.usb.action.USB_DEVICE_ATTACHED flg=0x10 }
         // Caused by NullPointerException: Attempt to invoke virtual method 'int android.hardware.usb.UsbDevice.getInterfaceCount()' on a null object reference
 
+        // Audit F-08: the blanket "org.chromium" ignore is removed.
+        // Only narrow, proven-recoverable chromium failures stay ignored;
+        // everything else must reach the default (crash-reporting) handler.
+        if (e.getClass().getName().startsWith("org.chromium")) {
+            Throwable root = e;
+            while (root.getCause() != null && root.getCause() != root) {
+                root = root.getCause();
+            }
+            // org.chromium.base.JniAndroid$UncaughtExceptionException
+            // 1) Caused by java.lang.InterruptedException
+            // 2) Caused by java.lang.SecurityException: The calling process has already registered an InputDevicesChangedListener.
+            return root instanceof InterruptedException
+                    || (root instanceof SecurityException
+                        && Helpers.containsAny(root.getMessage(), "InputDevicesChangedListener"));
+        }
+
         return Helpers.containsAny(e.getMessage(),
                 "KatnissVoiceInteractionService", "ListenableFuture", "Missing android.support.FILE_PROVIDER_PATHS meta-data",
-                "Error receiving broadcast Intent { act=android.hardware.usb.action.USB_DEVICE_ATTACHED flg=0x10 }")
-                || e.getClass().getName().startsWith("org.chromium");
+                "Error receiving broadcast Intent { act=android.hardware.usb.action.USB_DEVICE_ATTACHED flg=0x10 }");
     }
 
     private Throwable wrapWithAdditionalInfo(Throwable e) {

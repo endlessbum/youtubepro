@@ -30,7 +30,8 @@ public class WebBrowserPresenter extends BasePresenter<WebBrowserView> {
 
     @Override
     public void onViewInitialized() {
-        if (mUrl != null) {
+        // Audit F-21: the view may be missing when no WebView provider is installed
+        if (mUrl != null && getView() != null) {
             getView().loadUrl(mUrl);
         }
     }

@@ -30,13 +30,18 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
-// The first letter of the flavor name must be in uppercase
+// Audit F-13: the Google Services plugin is applied deterministically for every build entry
+// point (aggregate builds included). The stfdroid flavor uses its own stub json from
+// src/stfdroid/google-services.json — the Firebase SDK is NOT included in that flavor
+// (dependencies are flavor-scoped), only inert string resources.
+if (new File("${projectDir}/google-services.json").exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}
+
+// Crashlytics Gradle plugin (mapping uploads): beta/stable flavors only. The SDK itself is
+// flavor-scoped (stbetaImplementation/ststableImplementation).
 if (new File("${projectDir}/google-services.json").exists() && (getGradle().getStartParameter().getTaskRequests().toString().contains("Stbeta") ||
         getGradle().getStartParameter().getTaskRequests().toString().contains("Ststable"))) {
-    // Google Services Gradle plugin (transforms google-services.json file)
-    apply plugin: 'com.google.gms.google-services'
-
-    // Apply the Crashlytics Gradle plugin
     apply plugin: 'com.google.firebase.crashlytics'
 }
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Audit F-09: cleartext HTTP is blocked everywhere by default.
+    Only the loopback interface is allowed (local app services/proxies).
+    Real endpoints (YouTube, SponsorBlock, DeArrow, RYD, app updates) are all HTTPS.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+    </domain-config>
+</network-security-config>

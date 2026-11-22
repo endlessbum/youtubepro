@@ -44,13 +44,16 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
 
         String country = LocaleUtility.getCurrentLocale(getContext()).getCountry();
 
-        appendUpdateCheckButton(settingsPresenter);
+        // Audit F-19: don't show the updater UI when no update manifest URLs are configured (F-Droid flavor)
+        if (Utils.isUpdaterConfigured(getContext())) {
+            appendUpdateCheckButton(settingsPresenter);
 
-        appendAutoUpdateSwitch(settingsPresenter);
+            appendAutoUpdateSwitch(settingsPresenter);
 
-        appendUpdateChangelogButton(settingsPresenter);
+            appendUpdateChangelogButton(settingsPresenter);
 
-        appendUpdateSource(settingsPresenter);
+            appendUpdateSource(settingsPresenter);
+        }
 
         appendInstallBridge(settingsPresenter);
 

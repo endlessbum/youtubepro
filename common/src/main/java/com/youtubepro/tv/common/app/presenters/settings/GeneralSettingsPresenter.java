@@ -668,7 +668,11 @@ public class GeneralSettingsPresenter extends BasePresenter<Void> {
                         mPlayerTweaksData.setPlayerDataSource(
                                 option.isSelected() ? PlayerTweaksData.PLAYER_DATA_SOURCE_OKHTTP : Utils.getFasterDataSource());
                         mGeneralData.setProxyEnabled(option.isSelected());
-                        new WebProxyDialog(getContext()).enable(option.isSelected());
+                        // Audit F-07: revert the toggle side effects when the user cancels the dialog
+                        new WebProxyDialog(getContext()).enable(option.isSelected(), () -> {
+                            mGeneralData.setProxyEnabled(false);
+                            mPlayerTweaksData.setPlayerDataSource(Utils.getFasterDataSource());
+                        });
                         if (option.isSelected()) {
                             settingsPresenter.closeDialog();
                         }

@@ -44,13 +44,15 @@
         android:name="android.software.leanback"
         android:required="true" />
 
-    <!-- android:usesCleartextTraffic - allow HTTP traffic -->
+    <!-- Audit F-09 (replaces android:usesCleartextTraffic="true"): cleartext HTTP is blocked by
+         default and allowed only for the loopback interface used by local app services.
+         Real endpoints (YouTube, SponsorBlock, DeArrow, RYD, updates) are all HTTPS. -->
     <!-- Alt cleartext options: https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted -->
     <!-- Audit F-04: Auto Backup is disabled. OAuth tokens and other secrets must never
          go into Android cloud backups. The app has its own explicit backup/restore flow. -->
     <application
         android:name="com.youtubepro.tv.ui.main.MainApplication"
-        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="false"
         android:allowAudioPlaybackCapture="true"
         android:hardwareAccelerated="true"

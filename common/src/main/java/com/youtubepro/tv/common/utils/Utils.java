@@ -1,5 +1,6 @@
 package com.youtubepro.tv.common.utils;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -712,6 +713,42 @@ public class Utils {
     public static void showNotification(Context context, int notificationId, Notification notification) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(notificationId, notification);
+    }
+
+    private static final int REQUEST_POST_NOTIFICATIONS = 23925;
+
+    /**
+     * Audit F-03: POST_NOTIFICATIONS is a runtime permission starting from API 33.
+     * Request it only when notifications are currently disabled. After a grant (or a
+     * silent Android deny after repeated refusals) this won't ask again, so no dialog loops.
+     */
+    public static void verifyNotificationsPermission(Activity activity) {
+        if (VERSION.SDK_INT < 33) {
+            return;
+        }
+
+        NotificationManager notificationManager =
+                (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (notificationManager != null && notificationManager.areNotificationsEnabled()) {
+            return;
+        }
+
+        try {
+            if (activity.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                activity.requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQUEST_POST_NOTIFICATIONS);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Audit F-19: the updater UI should be hidden when no update manifest URLs are
+     * configured (the F-Droid flavor ships an empty update_urls array).
+     */
+    public static boolean isUpdaterConfigured(Context context) {
+        return context.getResources().getStringArray(R.array.update_urls).length > 0;
     }
 
     public static void startService(Context context, Class<? extends Service> serviceCls) {
