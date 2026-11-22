@@ -46,6 +46,12 @@ if (new File("${projectDir}/google-services.json").exists() && (getGradle().getS
 }
 
 android {
+
+namespace 'com.youtubepro.tv'
+
+    buildFeatures {
+        buildConfig = true
+    }
     // FIX: Default interface methods are only supported starting with Android N (--min-api 24)
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -151,8 +157,8 @@ android {
         // exclude "lib/armeabi/**"
     }
 
-    lintOptions {
-        abortOnError true
+    lint {
+        abortOnError = true
         //checkReleaseBuilds false // fix for ClassNotFoundException: com.android.tools.lint.client.api.Vendor
     }
 

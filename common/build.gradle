@@ -3,6 +3,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.android.library'
 
 android {
+
+namespace 'com.youtubepro.tv.common'
+
+    buildFeatures {
+        buildConfig = true
+    }
+    // Audit F-12: match the Java compile target (AGP 8 checks Kotlin/Java jvmTarget consistency)
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
     // FIX: Default interface methods are only supported starting with Android N (--min-api 24)
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -34,11 +44,10 @@ android {
         }
     }
 
-    lintOptions {
-        abortOnError true
-        disable 'MissingTranslation'
-        disable 'MissingQuantity'
-    }
+    lint {
+        abortOnError = true
+        disable += ['MissingTranslation']
+        disable += ['MissingQuantity']}
 
     // gradle 4.6 migration: disable dimensions mechanism
     // more: https://proandroiddev.com/advanced-android-flavors-part-4-a-new-version-fc2ad80c01bb

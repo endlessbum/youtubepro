@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.android.library'
 
 android {
+
+namespace 'com.github.vkay94.dtpv'
     compileSdkVersion project.properties.compileSdkVersion
     buildToolsVersion project.properties.buildToolsVersion
 
@@ -29,9 +31,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    // kotlinOptions {
-    //     jvmTarget = JavaVersion.VERSION_1_8
-    // }
+    // Audit F-12: match the Java compile target (AGP 8 checks Kotlin/Java jvmTarget consistency)
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
