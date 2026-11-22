@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build.VERSION;
-import android.provider.OpenableColumns;
 
 import com.liskovsoft.sharedutils.helpers.DateHelper;
 import com.liskovsoft.sharedutils.helpers.FileHelpers;
@@ -20,6 +18,7 @@ import com.youtubepro.tv.common.prefs.GeneralData;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -61,13 +60,32 @@ public class BackupAndRestoreHelper implements OnResult {
         }
 
         if (file.isWritable()) {
+            // Audit F-01: write to a temp file first, then swap.
+            // A failed/interrupted export must never leave a broken zip in the backup folder.
             final File zipFile = new File(mediaDir, backupZipName);
-            ZipHelper2.zipDirectory(dataDir, zipFile);
+            final File tmpZipFile = new File(mediaDir, backupZipName + ".tmp");
 
-            if (zipFile.exists()) {
+            try {
+                FileHelpers.delete(tmpZipFile);
+                ZipHelper2.zipDirectory(dataDir, tmpZipFile);
+
+                if (!tmpZipFile.exists() || tmpZipFile.length() == 0) {
+                    throw new IOException("Failed to create backup zip");
+                }
+
+                if (zipFile.exists() && !zipFile.delete()) {
+                    throw new IOException("Failed to replace the old backup zip");
+                }
+                if (!tmpZipFile.renameTo(zipFile)) {
+                    throw new IOException("Failed to finalize backup zip");
+                }
+
                 file.copyFrom(zipFile);
                 // Delete temporary zip
                 zipFile.delete();
+            } catch (Exception e) {
+                e.printStackTrace();
+                FileHelpers.delete(tmpZipFile);
             }
         }
 
@@ -168,7 +186,12 @@ public class BackupAndRestoreHelper implements OnResult {
         );
     }
 
-    public void unpackTempZip(File tempZip) {
+    /**
+     * Audit F-01: validate the archive, unpack to a staging dir, then swap with rollback.
+     * Existing data is deleted only after the new data is successfully extracted,
+     * and the temp zip is removed only after a confirmed success.
+     */
+    public void unpackTempZip(File tempZip) throws IOException {
         if (!tempZip.exists()) {
             return;
         }
@@ -177,18 +200,61 @@ public class BackupAndRestoreHelper implements OnResult {
         File mediaDir = FileHelpers.getExternalMediaDirectory(mContext);
         File dataDir = new File(mediaDir, "data");
 
-        // Remove old data
-        if (dataDir.exists()) FileHelpers.delete(dataDir);
+        // Validate the archive structure before touching any existing data
+        boolean hasDataRoot = ZipHelper2.hasRootDir(tempZip, "data");
 
-        if (ZipHelper2.hasRootDir(tempZip, "data")) {
-            // Unpack ZIP with data folder
-            ZipHelper2.unzip(tempZip, mediaDir);
-        } else {
-            // Seems we've packed the contents of the data dir not data itself
-            ZipHelper2.unzip(tempZip, dataDir);
+        File stagingDir = new File(mediaDir, "data_restore_staging");
+        File oldDataBackup = new File(mediaDir, "data_backup_old");
+        FileHelpers.delete(stagingDir);
+        FileHelpers.delete(oldDataBackup);
+
+        boolean oldMoved = false;
+        boolean newInstalled = false;
+        try {
+            if (hasDataRoot) {
+                // Unpack ZIP with data folder
+                ZipHelper2.unzip(tempZip, stagingDir);
+                File extractedData = new File(stagingDir, "data");
+                if (!extractedData.isDirectory() || FileHelpers.isEmpty(extractedData)) {
+                    throw new IOException("Invalid backup structure: 'data' folder is missing or empty");
+                }
+                oldMoved = !dataDir.exists() || dataDir.renameTo(oldDataBackup);
+                if (!oldMoved) {
+                    throw new IOException("Failed to move the current data directory");
+                }
+                newInstalled = extractedData.renameTo(dataDir);
+                if (!newInstalled) {
+                    throw new IOException("Failed to install the restored data");
+                }
+            } else {
+                // Seems we've packed the contents of the data dir not data itself
+                ZipHelper2.unzip(tempZip, stagingDir);
+                if (FileHelpers.isEmpty(stagingDir)) {
+                    throw new IOException("Invalid backup: archive is empty");
+                }
+                oldMoved = !dataDir.exists() || dataDir.renameTo(oldDataBackup);
+                if (!oldMoved) {
+                    throw new IOException("Failed to move the current data directory");
+                }
+                newInstalled = stagingDir.renameTo(dataDir);
+                if (!newInstalled) {
+                    throw new IOException("Failed to install the restored data");
+                }
+            }
+        } catch (Exception e) {
+            // Rollback: bring the previous data back on any failure
+            if (newInstalled) FileHelpers.delete(dataDir);
+            if (oldMoved && !dataDir.exists() && oldDataBackup.exists()) {
+                oldDataBackup.renameTo(dataDir);
+            }
+            FileHelpers.delete(stagingDir);
+            FileHelpers.delete(oldDataBackup);
+            throw e instanceof IOException ? (IOException) e : new IOException("Restore failed", e);
         }
 
-        // Delete the temporary ZIP
+        // Success: cleanup. Keep the temp zip deletion here (only after confirmed success).
+        FileHelpers.delete(oldDataBackup);
+        FileHelpers.delete(stagingDir);
         tempZip.delete();
     }
 
@@ -208,11 +274,13 @@ public class BackupAndRestoreHelper implements OnResult {
             ex.printStackTrace();
             if (onError != null) {
                 onError.onError(ex);
+            } else {
+                MessageHelpers.showLongMessage(mContext, "Failed to restore backup: " + ex.getMessage());
             }
         }
     }
 
-    private void unpackTempZip(Uri zipUri) {
+    private void unpackTempZip(Uri zipUri) throws IOException {
         if (zipUri == null) {
             return;
         }
@@ -227,67 +295,25 @@ public class BackupAndRestoreHelper implements OnResult {
         unpackTempZip(tempZip);
     }
 
-    private void copyUriToDir(Uri uri, File targetDir) {
-        try {
-            String fileName = getFileName(uri);
-            if (fileName == null) fileName = "imported_" + DateHelper.createTimestamp();
-
-            File outFile = new File(targetDir, fileName);
-
-            InputStream in = mContext.getContentResolver().openInputStream(uri);
-            OutputStream out = new FileOutputStream(outFile);
-
-            byte[] buffer = new byte[8192];
-            int len;
-            while ((len = in.read(buffer)) != -1) {
-                out.write(buffer, 0, len);
-            }
-
-            in.close();
-            out.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IllegalStateException("Failed to copyUriToDir", e);
-        }
-    }
-
     private void copyUriToFile(Uri uri, File outFile) {
-        try {
-            InputStream in = mContext.getContentResolver().openInputStream(uri);
-            OutputStream out = new FileOutputStream(outFile);
-
+        // Audit F-22: streams must be closed even when the copy fails
+        try (InputStream in = mContext.getContentResolver().openInputStream(uri);
+             OutputStream out = new FileOutputStream(outFile)) {
             byte[] buffer = new byte[8192];
             int len;
             while ((len = in.read(buffer)) != -1) {
                 out.write(buffer, 0, len);
             }
-
-            in.close();
-            out.close();
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new IllegalStateException("Failed to copyUriToFile", e);
         }
     }
 
-    private String getFileName(Uri uri) {
-        Cursor cursor = mContext.getContentResolver().query(uri, null, null, null, null);
-        if (cursor != null) {
-            int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
-            cursor.moveToFirst();
-            String name = cursor.getString(nameIndex);
-            cursor.close();
-            return name;
-        }
-        return null;
-    }
-
     private GeneralData getGeneralData() {
         return GeneralData.instance(mContext);
     }
-    
+
     private String createBackupZipNameWithTimestamp() {
         return mContext.getPackageName() + "_" + getTimeStamp() + ".zip";
     }

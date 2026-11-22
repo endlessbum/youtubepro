@@ -387,7 +387,13 @@ public class BackupAndRestoreManager implements MotherActivity.OnPermissions {
         File dataDir = new File(mediaDir, "data");
         if (dataDir.exists()) {
             File zipFile = new File(mediaDir,  "YouTubeProBackup.zip");
-            ZipHelper2.zipDirectory(dataDir, zipFile);
+            try {
+                ZipHelper2.zipDirectory(dataDir, zipFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+                // A broken/missing zip is better than a stale incomplete one
+                zipFile.delete();
+            }
         }
     }
 
@@ -396,7 +402,12 @@ public class BackupAndRestoreManager implements MotherActivity.OnPermissions {
             File source = currentBackup.getParentFile();
             if (source != null) {
                 File zipFile = new File(source.getParentFile(), source.getName() + ".zip");
-                ZipHelper2.zipDirectory(source, zipFile);
+                try {
+                    ZipHelper2.zipDirectory(source, zipFile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    zipFile.delete();
+                }
             }
         }
     }
@@ -406,7 +417,12 @@ public class BackupAndRestoreManager implements MotherActivity.OnPermissions {
         if (files != null) {
             for (File file : files) {
                 if (file.getName().endsWith(".zip")) {
-                    mHelper.unpackTempZip(file);
+                    try {
+                        mHelper.unpackTempZip(file);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        MessageHelpers.showLongMessage(mContext, "Failed to restore backup: " + e.getMessage());
+                    }
                     // More than one zip file
                     //break;
                 }

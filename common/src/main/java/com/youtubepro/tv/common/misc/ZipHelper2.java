@@ -8,16 +8,21 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * Low-level zip helpers.
+ *
+ * NOTE (audit F-01): these methods never swallow exceptions anymore.
+ * A failed zip/unzip must be visible to the caller, otherwise restore/export
+ * flows may report success while data was lost or incomplete.
+ */
 public class ZipHelper2 {
-    public static void zipDirectory(File sourceDir, File zipFile) {
-        try {
-            ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFile));
+    public static void zipDirectory(File sourceDir, File zipFile) throws IOException {
+        try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFile))) {
             zipFileRecursive(zos, sourceDir, sourceDir.getName() + "/");
-            zos.close();
-        } catch (Exception e) { e.printStackTrace(); }
+        }
     }
 
-    private static void zipFileRecursive(ZipOutputStream zos, File file, String base) throws Exception {
+    private static void zipFileRecursive(ZipOutputStream zos, File file, String base) throws IOException {
         if (file.isDirectory()) {
             File[] children = file.listFiles();
             if (children != null) {
@@ -26,19 +31,18 @@ public class ZipHelper2 {
                 }
             }
         } else {
-            FileInputStream fis = new FileInputStream(file);
-            zos.putNextEntry(new ZipEntry(base.substring(0, base.length() -1))); // strip "/" at the end to mark as file
-            byte[] buf = new byte[8192];
-            int len;
-            while ((len = fis.read(buf)) > 0) zos.write(buf, 0, len);
-            fis.close();
-            zos.closeEntry();
+            try (FileInputStream fis = new FileInputStream(file)) {
+                zos.putNextEntry(new ZipEntry(base.substring(0, base.length() - 1))); // strip "/" at the end to mark as file
+                byte[] buf = new byte[8192];
+                int len;
+                while ((len = fis.read(buf)) > 0) zos.write(buf, 0, len);
+                zos.closeEntry();
+            }
         }
     }
 
-    public static void unzip(File zipFile, File targetRoot) {
-        try {
-            ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile));
+    public static void unzip(File zipFile, File targetRoot) throws IOException {
+        try (ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile))) {
             String canonicalRoot = targetRoot.getCanonicalPath() + File.separator;
             ZipEntry entry;
             byte[] buffer = new byte[8192];
@@ -57,37 +61,31 @@ public class ZipHelper2 {
                     out.mkdirs();
                 } else {
                     out.getParentFile().mkdirs();
-                    FileOutputStream fos = new FileOutputStream(out);
-                    int len;
-                    while ((len = zis.read(buffer)) > 0) fos.write(buffer, 0, len);
-                    fos.close();
+                    try (FileOutputStream fos = new FileOutputStream(out)) {
+                        int len;
+                        while ((len = zis.read(buffer)) > 0) fos.write(buffer, 0, len);
+                    }
                 }
                 zis.closeEntry();
             }
-            zis.close();
-        } catch (Exception e) { e.printStackTrace(); }
+        }
     }
 
-    public static boolean hasRootDir(File zipFile, String rootDir) {
-        boolean result = false;
-
-        try {
-            ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile));
+    public static boolean hasRootDir(File zipFile, String rootDir) throws IOException {
+        try (ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile))) {
             ZipEntry entry;
 
             String prefix = rootDir + "/";
 
             while ((entry = zis.getNextEntry()) != null) {
-                if (entry.getName().startsWith(prefix)) {
-                    zis.closeEntry();
-                    result = true;
-                    break;
-                }
+                boolean match = entry.getName().startsWith(prefix);
                 zis.closeEntry();
+                if (match) {
+                    return true;
+                }
             }
-            zis.close();
-        } catch (Exception e) { e.printStackTrace(); }
+        }
 
-        return result;
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 package com.youtubepro.tv.common.misc;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build.VERSION;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 
 import com.liskovsoft.sharedutils.helpers.AppInfoHelpers;
 import com.liskovsoft.sharedutils.helpers.PermissionHelpers;
+import com.youtubepro.tv.common.R;
 
 public class BackupReceiverActivity extends Activity {
     private BackupAndRestoreHelper mRestoreHelper;
@@ -26,10 +28,9 @@ public class BackupReceiverActivity extends Activity {
         // access to the URI by the sender, so you can read the file without
         // READ_EXTERNAL_STORAGE.
         if (PermissionHelpers.hasStoragePermissions(this) || AppInfoHelpers.getRealSdkVersion(this) > 29) {
-            restoreData();
-            finish();
+            confirmAndRestore();
         } else {
-            mPendingHandler = this::restoreData;
+            mPendingHandler = this::confirmAndRestore;
             PermissionHelpers.verifyStoragePermissions(this);
         }
     }
@@ -38,7 +39,8 @@ public class BackupReceiverActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
-        mRestoreHelper.handleIncomingZip(intent);
+        setIntent(intent);
+        confirmAndRestore();
     }
 
     @Override
@@ -54,7 +56,17 @@ public class BackupReceiverActivity extends Activity {
         }
     }
 
-    private void restoreData() {
-        mRestoreHelper.handleIncomingZip(getIntent());
+    /**
+     * Audit F-05: the ZIP usually comes from an external app (file manager, browser, messenger).
+     * Never touch user data before an explicit user confirmation.
+     */
+    private void confirmAndRestore() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.backup_confirm_restore_title)
+                .setMessage(R.string.backup_confirm_restore_message)
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> mRestoreHelper.handleIncomingZip(getIntent()))
+                .setNegativeButton(android.R.string.cancel, (dialog, which) -> finish())
+                .setOnCancelListener(dialog -> finish())
+                .show();
     }
 }

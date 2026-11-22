@@ -46,10 +46,12 @@
 
     <!-- android:usesCleartextTraffic - allow HTTP traffic -->
     <!-- Alt cleartext options: https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted -->
+    <!-- Audit F-04: Auto Backup is disabled. OAuth tokens and other secrets must never
+         go into Android cloud backups. The app has its own explicit backup/restore flow. -->
     <application
         android:name="com.youtubepro.tv.ui.main.MainApplication"
         android:usesCleartextTraffic="true"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:allowAudioPlaybackCapture="true"
         android:hardwareAccelerated="true"
         android:largeHeap="true"

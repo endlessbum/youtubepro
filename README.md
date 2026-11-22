@@ -59,7 +59,7 @@ YouTubePro — бесплатный медиаплеер с открытым и�
 > Начиная с октября 2025 года новые устройства Amazon FireTV больше не работают на базе Android. YouTubePro **не будет** совместим с Fire Stick 4k Select и более новыми устройствами, которые работают под управлением собственной ОС Amazon — VegaOS.
 
 ![Поддержка устройств](images/new/compatibility.png)
-* **Поддерживаются:** все Android TV и TV-приставки (включая все FireTV, выпущенные до октября 2025, NVIDIA Shield и Chromecast с Google TV), даже старые — с Android 4.3 (Kitkat).
+* **Поддерживаются:** все Android TV и TV-приставки (включая все FireTV, выпущенные до октября 2025, NVIDIA Shield и Chromecast с Google TV), даже старые — с Android 4.3 (Jelly Bean).
 * **Не поддерживаются:** смартфоны и не-Android платформы: Samsung Tizen, LG webOS, Apple TV и т.д.
 
 ## Установка

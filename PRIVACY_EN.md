@@ -10,11 +10,12 @@ This document covers the **F-Droid build** only. Other versions or "flavors" of 
 ## 2. Data Collection and Processing
 * **No Backend:** The F-Droid build of YouTubePro operates entirely as a client-side application. It does not communicate with any developer-controlled servers.
 * **No Telemetry or Analytics:** This version contains no tracking code, telemetry, or analytics frameworks (e.g., no Firebase, no Crashlytics). We do not monitor how you use the app.
+* **No Android Auto Backup:** The native Android backup mechanism is disabled (`allowBackup=false`). Auth tokens and other app data are never uploaded to Google cloud backups; backups are created only manually via the built-in backup feature.
 * **No Update Tracking:** The self-update mechanism is disabled in this flavor. Updates are handled exclusively through the F-Droid client.
 
 ## 3. Third-Party Services (YouTube/Google)
 * **Authentication:** When you sign in, the application uses the official Google OAuth 2.0 flow. This is a secure method that allows you to authorize the app without sharing your password with the developer.
-* **Local Storage:** Authentication tokens are stored exclusively on your device's secure local storage. They are never transmitted to, or stored by, the developer.
+* **Local Storage:** Authentication tokens are stored exclusively in the app-private directory on your device (not accessible to other apps; without additional encryption, but excluded from native Android backup — see section 2). They are never transmitted to, or stored by, the developer.
 * **Data Flow:** Video data and account information are fetched directly from YouTube/Google servers to your device.
 
 ## 4. Community-Driven Services & Third-Party APIs

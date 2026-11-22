@@ -1,0 +1,11 @@
+# Audit F-11: keep the Gradle wrapper launchable on Linux/CI
+# (LF line endings + executable bit tracked in git)
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.jar binary
+*.so binary
+*.apk binary
+*.zip binary

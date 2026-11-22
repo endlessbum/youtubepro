@@ -763,4 +763,6 @@
         <item quantity="one">%s second</item>
         <item quantity="other">%s seconds</item>
     </plurals>
+    <string name="backup_confirm_restore_title">Restore backup</string>
+    <string name="backup_confirm_restore_message">Restore data from this archive? Current app data will be replaced. The file came from an external source — continue only if you trust it.</string>
 </resources>

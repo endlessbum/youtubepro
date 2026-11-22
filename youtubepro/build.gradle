@@ -111,11 +111,9 @@ android {
                 signingConfig signingConfigs.release
             }
         }
-        // Use same key for release and debug for testing
+        // Audit F-17: debug builds always use the standard debug keystore.
+        // Never sign test builds with the production key.
         debug {
-            if (keystorePropertiesFile.exists()) {
-                signingConfig signingConfigs.release
-            }
         }
     }
 
@@ -161,16 +159,20 @@ android {
     productFlavors {
         stbeta {
             applicationId "org.youtubepro.beta"
-            targetSdkVersion project.properties.compileSdkVersion
+            // Audit F-02: targetSdk is an explicit product decision (34).
+            // Do not silently couple it to compileSdk.
+            targetSdkVersion 34
         }
         ststable {
             applicationId "org.youtubepro.stable"
-            targetSdkVersion project.properties.compileSdkVersion
+            // Audit F-02: targetSdk is an explicit product decision (34).
+            targetSdkVersion 34
         }
         stfdroid {
             applicationId "app.youtubepro.fdroid"
             minSdkVersion 21
-            targetSdkVersion project.properties.compileSdkVersion
+            // Audit F-02: targetSdk is an explicit product decision (34).
+            targetSdkVersion 34
 
             // The content of Universal apk
             ndk {
