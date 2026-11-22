@@ -1,217 +1,215 @@
 # YouTubePro
 
-> **Fork notice:** This project is a fork of **[SmartTube](https://github.com/yuliskov/smarttube)** — the original app by **yuliskov**. All credit for the original SmartTube app goes to its author. This fork continues development under the new name **YouTubePro**, distributed under the same MIT license (see [LICENSE](LICENSE)).
+> **О проекте:** это форк **[SmartTube](https://github.com/yuliskov/smarttube)** — оригинального приложения от **yuliskov**. Все заслуги за оригинальное приложение SmartTube принадлежат его автору. Этот форк продолжает разработку под новым названием **YouTubePro** и распространяется под той же лицензией MIT (см. [LICENSE](LICENSE)).
 
 ---
 
-[<img src="images/badge_fdroid.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/app.smarttube.fdroid/)
-[<img src="images/badge_github.png" alt="Get it on GitHub" height="80">](https://github.com/yuliskov/SmartTube/releases)
+[<img src="images/badge_fdroid.png" alt="Доступно на F-Droid" height="80">](https://f-droid.org/packages/app.smarttube.fdroid/)
+[<img src="images/badge_github.png" alt="Доступно на GitHub" height="80">](https://github.com/yuliskov/SmartTube/releases)
 
-# Important announcement about the app
+# Важное объявление о приложении
 
-My development environment was infected by unknown malicious software, as a result of which a few builds may have been affected. Once the issue was detected, I secured everything with a full disk wipe, restored a clean setup, and now all builds are scanned with VirusTotal. The F-Droid version will also be verified before release.
+Моя среда разработки была заражена неизвестным вредоносным ПО, из-за чего некоторые сборки могли быть затронуты. Обнаружив проблему, я обезопасил всё с помощью полной очистки диска, восстановил чистое окружение, и теперь все сборки проверяются через VirusTotal. Версия для F-Droid также будет проверена перед выпуском.
 
-Public keys may have been compromised, which is why I am sharing this issue. You can download the new version and the new public key below, and instructions for restoring backups are provided.
+Публичные ключи могли быть скомпрометированы, поэтому я сообщаю об этой проблеме. Новую версию и новый публичный ключ можно скачать ниже, там же приведены инструкции по восстановлению резервных копий.
 
-No extra actions are required since the app uses **one-time connection codes**. These codes have very limited permissions (for example, they cannot change your password). Still, you can revoke them if you want full peace of mind.
+Дополнительных действий не требуется, поскольку приложение использует **одноразовые коды подключения**. У таких кодов очень ограниченные права (например, они не могут изменить ваш пароль). Тем не менее, при желании вы можете отозвать доступ для полного спокойствия.
 
-# How to revoke access:
+# Как отозвать доступ:
 
-1. Open [myaccount.google.com/security](https://myaccount.google.com/security)
-2. Find **“Your connections to third-party apps & services”**
-3. Tap **“See all connection”** and locate **YouTube TV** or **Google Drive**
-4. Select the app → **“Remove access”**
+1. Откройте [myaccount.google.com/security](https://myaccount.google.com/security)
+2. Найдите раздел **«Подключения к сторонним приложениям и сервисам»** (Your connections to third-party apps & services)
+3. Нажмите **«Посмотреть все подключения»** и найдите **YouTube TV** или **Google Диск**
+4. Выберите приложение → **«Удалить доступ»**
 
-Please keep built-in security features enabled to stay protected.
+Пожалуйста, держите встроенные функции безопасности включёнными, чтобы оставаться защищёнными.
 
-# SmartTube
-  
-<!-- <img width="100" src="https://github.com/yuliskov/SmartTube/blob/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png" alt="logo"/> -->
+# YouTubePro
 
-![The app screenshot](./images/browse_home.png)
+![Скриншот приложения](./images/browse_home.png)
 
-SmartTube is a free and open-source media client for Android TVs and TV boxes. It allows you to browse and play content from various public sources in a TV-optimized interface.
+YouTubePro — бесплатный медиаплеер с открытым исходным кодом для Android TV и TV-приставок. Он позволяет просматривать и воспроизводить контент из различных публичных источников в интерфейсе, оптимизированном для телевидения.
 
-### ✅ Features
-- Clean interface 
-- SponsorBlock integration  
-- Adjustable playback speed  
-- 8K resolution support  
-- 60fps playback  
-- HDR compatibility  
-- View live chat  
-- Customizable buttons  
-- Does not require Google Services  
-- Helpful international community
+### ✅ Возможности
+- Чистый интерфейс
+- Интеграция SponsorBlock
+- Регулируемая скорость воспроизведения
+- Поддержка разрешения 8K
+- Воспроизведение с частотой 60 fps
+- Поддержка HDR
+- Просмотр чата трансляций
+- Настраиваемые кнопки
+- Не требует сервисов Google
+- Дружное международное сообщество
 
-### ❌ Limitations
-- Not supported on phones and tablets  
-- Comment functionality is unstable  
-- Voice search and casting performance may be inferior to official apps, depending on your device  
+### ❌ Ограничения
+- Не поддерживается на смартфонах и планшетах
+- Функциональность комментариев нестабильна
+- Голосовой поиск и трансляция (cast) могут уступать официальным приложениям — зависит от устройства
 
-Give it a try!
+Попробуйте!
 
-**Do you have any question?** Ctrl+F or ⌘F this readme first!
+**Есть вопросы?** Сначала воспользуйтесь поиском (Ctrl+F или ⌘F) по этому ридми!
 
-[**Installation**](#installation) | [**Site**](https://smarttubeapp.github.io) | [**Contributors**](#contributors) | [**Donation**](#donation) | [**FAQ**](#faq) | [Support / Chat](#support) | [Build](#build) | [Translate the app](https://jtbrinkmann.de/tools/android-strings.xml-translator.html) | [Changelog](https://t.me/s/SmartTubeNewsEN) | [Liability](#liability)
+[**Установка**](#установка) | [**Сайт**](https://smarttubeapp.github.io) | [**Участники**](#участники) | [**Пожертвования**](#пожертвования) | [**FAQ**](#faq) | [Поддержка / чат](#поддержка) | [Сборка](#сборка) | [Перевести приложение](https://jtbrinkmann.de/tools/android-strings.xml-translator.html) | [Список изменений](https://t.me/s/SmartTubeNewsEN) | [Ответственность](#ответственность)
 
 
-## Device support
+## Поддержка устройств
 > [!IMPORTANT]  
-> Starting in October 2025 new Amazon FireTV devices no longer run Android under the hood. SmartTube will **not** be compatible with the Fire Stick 4k Select and newer devices which run Amazon's own VegaOS.
+> Начиная с октября 2025 года новые устройства Amazon FireTV больше не работают на базе Android. YouTubePro **не будет** совместим с Fire Stick 4k Select и более новыми устройствами, которые работают под управлением собственной ОС Amazon — VegaOS.
 
-![Device support image](images/new/compatibility.png)
-* **Supported:** all Android TVs and TV boxes (incl. All FireTV devices released before Oct. 2025, NVIDIA Shield & Chromecast with Google TV), even older ones with Android 4.3 (Kitkat).
-* **Not supported:** Smartphones, non-Android platforms like Samsung Tizen, LG webOS, Apple TV, etc.
+![Поддержка устройств](images/new/compatibility.png)
+* **Поддерживаются:** все Android TV и TV-приставки (включая все FireTV, выпущенные до октября 2025, NVIDIA Shield и Chromecast с Google TV), даже старые — с Android 4.3 (Kitkat).
+* **Не поддерживаются:** смартфоны и не-Android платформы: Samsung Tizen, LG webOS, Apple TV и т.д.
 
-## Installation
+## Установка
 
-> [video of the installation](images/new/zPV0imF.mp4) (note: download url changed to `kutt.to/stn_beta` or `kutt.to/stn_stable`)
+> [видео установки](images/new/zPV0imF.mp4) (примечание: ссылка для скачивания изменилась на `kutt.to/stn_beta` или `kutt.to/stn_stable`)
 
-**Do not** download SmartTube from any **app store**, APK websites or blogs; these were uploaded by other people and may contain malware or ads. SmartTube is not officially published on any app store.
+**Не** скачивайте YouTubePro из **магазинов приложений**, с APK-сайтов или блогов; там файлы загружены посторонними людьми и могут содержать вредоносное ПО или рекламу. YouTubePro официально не публикуется ни в одном магазине приложений.
 
-There is a **beta release** (recommended) and a **stable release**. Beta gets new features and bugfixes faster than the stable release.
+Есть **бета-релиз** (рекомендуется) и **стабильный релиз**. Бета быстрее стабильной версии получает новые функции и исправления.
 
-You can use either of the following methods to install the app:
+Установить приложение можно любым из следующих способов:
 
-- (**Easiest**) Install [Downloader by AFTVnews](https://www.aftvnews.com/downloader/) on your Android TV, open it and enter `kutt.to/stn_beta` or `kutt.to/stn_stable`, then read, understand and confirm the security prompts. (<small>You can also enter [**79015**](https://aftv.news/79015) (for beta) or [**28544**](https://aftv.news/28544) (for stable), but this requires an extra step to install the AFTVnews Downloader browser addon if you haven't already.</small>)
-- Install a file transfer app on your Android TV, download the APK on your phone or computer and transfer it to your TV (e.g. [_Send Files to TV_](https://sendfilestotv.app/) from the Google Play Store / Amazon AppStore)
-- Download the APK onto a USB stick, put the USB stick into your TV and use a file manager app from the Google Play Store / Amazon AppStore (e.g. [_FX File Explorer_](https://play.google.com/store/apps/details?id=nextapp.fx) or [_X-plore_](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)). Android's preinstalled file manager does not work! Do **not** get the ad-infested _FileCommander_.
-- If you are an advanced user, you can install it using ADB. [guide](https://fossbytes.com/side-load-apps-android-tv/#h-how-to-sideload-apps-on-your-android-tv-using-adb) | [alternative guide](https://www.aftvnews.com/sideload/)
+- (**Проще всего**) Установите на Android TV [Downloader by AFTVnews](https://www.aftvnews.com/downloader/), откройте его и введите `kutt.to/stn_beta` или `kutt.to/stn_stable`, затем прочитайте, поймите и подтвердите предупреждения безопасности. (<small>Также можно ввести [**79015**](https://aftv.news/79015) (для беты) или [**28544**](https://aftv.news/28544) (для стабильной версии), но это требует дополнительного шага — установки браузерного дополнения AFTVnews Downloader, если оно ещё не установлено.</small>)
+- Установите на Android TV приложение для передачи файлов, скачайте APK на телефоне или компьютере и передайте его на телевизор (например, [_Send Files to TV_](https://sendfilestotv.app/) из Google Play Store / Amazon AppStore)
+- Скачайте APK на USB-накопитель, вставьте его в телевизор и откройте через файловый менеджер из Google Play Store / Amazon AppStore (например, [_FX File Explorer_](https://play.google.com/store/apps/details?id=nextapp.fx) или [_X-plore_](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)). Предустановленный файловый менеджер Android не подходит! Не используйте захламлённый рекламой _FileCommander_.
+- Если вы опытный пользователь, можно установить приложение через ADB. [руководство](https://fossbytes.com/side-load-apps-android-tv/#h-how-to-sideload-apps-on-your-android-tv-using-adb) | [альтернативное руководство](https://www.aftvnews.com/sideload/)
 
-**Troubleshooting:** See device specific notes below. If installation fails, either your **disk space is full** or the APK file didn't download correctly; clear up space and try downloading again. If the app installed, but crashes when opening, make sure to install it to internal memory, not to an SD card / external storage.
+**Устранение неполадок:** смотрите примечания к конкретным устройствам ниже. Если установка не удалась, либо **закончилось место на диске**, либо APK-файл скачался некорректно; освободите место и попробуйте скачать снова. Если приложение установилось, но падает при запуске — убедитесь, что оно установлено во внутреннюю память, а не на SD-карту / внешнее хранилище.
 
-**The app has a built-in updater** with changelog. You can also find all releases and the **changelog** on the [Telegram channel @SmartTubeNewsEN](https://t.me/s/SmartTubeNewsEN) (readable without account) or on [Github](https://github.com/yuliskov/SmartTube/releases/).
+**В приложении есть встроенный механизм обновления** со списком изменений. Все релизы и **changelog** также доступны в [Telegram-канале @SmartTubeNewsEN](https://t.me/s/SmartTubeNewsEN) (читается без аккаунта) или на [GitHub](https://github.com/yuliskov/SmartTube/releases/).
 
-> latest [**beta download**](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk)
+> последняя [**бета-версия**](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk)
 >
-> latest [stable download](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk)
+> последняя [стабильная версия](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk)
 
 
-### Installation (Chromecast with Google TV)
+### Установка (Chromecast с Google TV)
 
-On **Chromecast with Google TV**, installation of apps is blocked by default, so an extra step is required:
+На **Chromecast с Google TV** установка приложений по умолчанию заблокирована, поэтому нужен дополнительный шаг:
 
-> **4.1. Enable Developer Options**
+> **4.1. Включите параметры разработчика**
 >
-> On your Chromecast, open the side menu and go to _Settings > System > About_. Scroll down to the _Android TV OS build_ section and click that repeatedly. A toast message will appear, explaining that you are a few steps away from being a developer. Continue clicking until you trigger it.
+> На Chromecast откройте боковое меню и перейдите в _Настройки > Система > Об устройстве_. Прокрутите вниз до раздела _Сборка Android TV OS_ и нажимайте на него многократно. Появится уведомление о том, что вы в нескольких шагах от того, чтобы стать разработчиком. Продолжайте нажимать, пока не активируется.
 >
 >
-> **4.2. Turn on the "unknown sources" setting**
+> **4.2. Включите настройку «неизвестные источники»**
 >
-> Go back to the main _Settings_ page and select _Apps > Security & Restrictions > Unknown sources_. Turn on the toggle for \[_Downloader by AFTVnews_ or\] whichever file browser you decided to use [...].
+> Вернитесь на главную страницу _Настроек_ и выберите _Приложения > Безопасность и ограничения > Неизвестные источники_. Включите переключатель для [_Downloader by AFTVnews_ или] того файлового менеджера, который вы решили использовать [...].
 >
-> [[source & picture guide](https://www.androidpolice.com/2021/02/07/how-to-sideload-any-apk-on-the-chromecast-with-android-tv/#install-the-apk)]
+> [[источник и иллюстрированное руководство](https://www.androidpolice.com/2021/02/07/how-to-sideload-any-apk-on-the-chromecast-with-android-tv/#install-the-apk)]
 
-After this, you can follow the [general installation guide](#installation) above.
-
-
-### Installation (Xiaomi devices with Chinese firmware)
-
-Xiaomi's **Chinese firmware** might block the installation **of the beta version**. The international firmware is not affected. Solutions:
-1. Use SmartTube's **stable version** instead (**recommended**)
-2. Use the international firmware for your device
-3. (if your device is from 2020 or before) You can do a factory reset and then install SmartTube beta before doing any system updates. You can then safely update your system, SmartTube should continue working.
+После этого следуйте [общему руководству по установке](#установка) выше.
 
 
-### Updating
+### Установка (устройства Xiaomi с китайской прошивкой)
 
-The app has a built-in updater. You only need to follow the installation procedure **once**. A few seconds after launching SmartTube, it will notify you if there is any update and also show a changelog. You can disable automatic update checks or manually update in the settings under "about".
+**Китайская прошивка** Xiaomi может блокировать установку **бета-версии**. Международная прошивка не затронута. Решения:
+1. Используйте **стабильную версию** YouTubePro (**рекомендуется**)
+2. Используйте международную прошивку для вашего устройства
+3. (если устройство 2020 года или старше) Можно выполнить сброс к заводским настройкам и установить YouTubePro beta до установки любых системных обновлений. После этого систему можно спокойно обновлять — YouTubePro должен продолжить работать.
 
-If the installation fails, either your **disk space is full** or the update didn't download correctly; clear up space and try updating again (_Settings > About > Check for updates_).
+
+### Обновление
+
+В приложении есть встроенный механизм обновления. Процедуру установки нужно пройти **только один раз**. Через несколько секунд после запуска YouTubePro уведомит о наличии обновления и покажет список изменений. Автоматическую проверку обновлений можно отключить или обновить вручную в настройках в разделе «о программе».
+
+Если установка не удалась, либо **закончилось место на диске**, либо обновление скачалось некорректно; освободите место и попробуйте обновиться снова (_Настройки > О программе > Проверить обновления_).
 
 
-## Compatibility
+## Совместимость
 
-SmartTube requires Android 4.3 or above. It does not work on non-Android devices (incl. LG or Samsung TVs). On unsupported TVs, you can use a TV stick or TV box. Though this app technically runs on smartphones and tablets, it is not optimized for such and offers no official support!
+YouTubePro требует Android 4.3 или выше. Он не работает на не-Android устройствах (включая телевизоры LG или Samsung). На неподдерживаемых телевизорах можно использовать TV-стик или TV-приставку. Хотя приложение технически запускается на смартфонах и планшетах, оно не оптимизировано под них и официальной поддержки не имеет!
 
-It has been successfully tested on TVs, TV boxes and TV sticks that are based on Android, including:
+Приложение успешно проверено на телевизорах, приставках и стиках на базе Android, включая:
 
-- Android TVs & Google TVs (e.g. Philips, Sony)
-- Chromecast with Google TV & TVs with _Chromecast built-in_
-- Amazon FireTV stick (all generations)
+- Android TV и Google TV (например, Philips, Sony)
+- Chromecast с Google TV и телевизоры с _Chromecast built-in_
+- Amazon FireTV stick (все поколения)
 - NVIDIA Shield
-- TV boxes running Android (many cheap chinese no-name boxes)
+- Приставки на Android (множество дешёвых китайских no-name коробок)
 - Xiaomi Mi Box
 
 
-## Features
+## Возможности
 
-### Interface
+### Интерфейс
 
-SmartTube focuses on a clean and distraction-free interface for watching media content. The app does not include advertising UI elements and focuses on playback and browsing experience instead.
+YouTubePro делает упор на чистый интерфейс без отвлекающих элементов для просмотра медиаконтента. Приложение не содержит рекламных элементов интерфейса и сосредоточено на воспроизведении и навигации.
 
 
 ### SponsorBlock
 
-SmartTube includes optional SponsorBlock integration. From the [SponsorBlock website](https://sponsor.ajay.app/):
+YouTubePro включает необязательную интеграцию SponsorBlock. Со [сайта SponsorBlock](https://sponsor.ajay.app/):
 
-> SponsorBlock is an open-source crowdsourced browser extension and open API for **skipping sponsor segments** in YouTube videos. [...] the extension automatically skips sponsors **it knows about** using a privacy preserving query system. It also supports skipping **other categories**, such as intros, outros and reminders to subscribe [and non-music parts in music videos].
+> SponsorBlock — это браузерное расширение с открытым исходным кодом и открытый API на основе краудсорсинга для **пропуска рекламных вставок** в видео YouTube. [...] расширение автоматически пропускает **известные ему** рекламные сегменты с использованием системы запросов, сохраняющих приватность. Оно также поддерживает пропуск **других категорий**, таких как вступления, концовки и напоминания подписаться [а также немузыкальные фрагменты в музыкальных видео].
 
-You can select which categories you want to skip in the settings. Unlike the browser addon, in SmartTube you cannot submit new segments (TVs and TV remotes aren't great devices for such precise operations). Note that SponsorBlock is a free and voluntary project based on user submissions, so don't expect it to 100% work every time. Sometimes, sponsor segments are not yet submitted to the database, sometimes the SponsorBlock servers are offline/overloaded.
-
-
-### Casting
-
-To cast videos from your phone (or other devices), you must link that device to your TV. Unlike the original YouTube app, SmartTube does not automatically show up when you are in the same wifi network. How to link your smartphone and TV:
-
-1. open SmartTube and go to settings
-2. go to "Remote control" (2nd option)
-3. open your YouTube app on your phone, go to settings > General > watch on TV
-4. click on _connect using TV-code_ and enter the code from your TV
-
-[**Screenshot guide**](https://t.me/SmartTubeEN/8514)
-
-Due to technical limitations, you need to open the app on the TV before casting; SmartTube cannot automatically wake up the TV.
-
-If you want sharing from your phone to also wake up the TV and launch SmartTube, you can use the third-party app [TubeBeam](https://github.com/jagjordi/tubebeam). It adds a _Send to TV_ entry to Android's share sheet and sends the link to the TV over ADB instead of casting (requires _USB debugging_ / _Network debugging_ to be enabled in the TV's developer options).
+Категории для пропуска можно выбрать в настройках. В отличие от браузерного дополнения, в YouTubePro нельзя отправлять новые сегменты (телевизоры и пульты — не лучшие устройства для таких точных операций). Учтите, что SponsorBlock — бесплатный добровольный проект, основанный на данных от пользователей, поэтому не ждите от него стопроцентной работы. Иногда сегменты ещё не добавлены в базу, иногда серверы SponsorBlock недоступны или перегружены.
 
 
-### Picture-in-Picture (PiP)
+### Трансляция (Cast)
 
-SmartTube supports playing videos in PiP mode. This needs to be enabled under _Settings > General > Background playback > Picture in picture_. The video will go into PiP mode when you press home while playing a video, and also when you press _back_ if enabled in _Settings > General > Background playback (activation)_.
+Чтобы транслировать видео с телефона (или другого устройства), нужно привязать это устройство к телевизору. В отличие от оригинального приложения YouTube, YouTubePro не появляется автоматически, когда вы в одной Wi-Fi сети. Как связать смартфон и телевизор:
 
+1. откройте YouTubePro и перейдите в настройки
+2. откройте «Пульт ДУ» (второй пункт)
+3. откройте приложение YouTube на телефоне, перейдите в настройки > Общие > смотреть на телевизоре
+4. нажмите _подключить по ТВ-коду_ и введите код с экрана телевизора
 
-### Adjust Speed
+[**Руководство со скриншотами**](https://t.me/SmartTubeEN/8514)
 
-You can adjust the playback speed pressing the speed-indicator icon (gauge) in the top row of the player. This is remembered across videos. Some speeds may cause frame drops, this is a known issue.
+Из-за технических ограничений перед трансляцией нужно открыть приложение на телевизоре; YouTubePro не может автоматически разбудить телевизор.
 
-
-### Voice Search
-
-To enable global voice search, an additional app must be installed alongside SmartTube. This _bridge app_ allows the system voice search to open SmartTube instead of the default YouTube app. For this to work, you must uninstall the original YouTube app. We know this sucks, but you can always reinstall it if you change your mind. The _bridge app_ will not show up in your launcher and you cannot launch it directly; it is only used internally by the system's voice search. On some devices, you need to explicitly say "Youtube" when searching (e.g. say "youtube cute cats" instead of just "cute cats").
-
-**On Amazon Fire TV**: 
-
-1. Uninstall the original YouTube app (no root required)
-2. Download and install the Amazon Bridge SmartTube app: https://kutt.to/stn_bridge_amazon (e.g. via _Downloader by AFTVnews_)
+Если вы хотите, чтобы отправка с телефона также будила телевизор и запускала YouTubePro, можно воспользоваться сторонним приложением [TubeBeam](https://github.com/jagjordi/tubebeam). Оно добавляет пункт _Отправить на ТВ_ в системное меню «Поделиться» и отправляет ссылку на телевизор через ADB вместо трансляции (требуется включить _Отладка по USB_ / _Отладка по сети_ в параметрах разработчика телевизора).
 
 
-**On Google Chromecast with Google TV**: 
+### Картинка в картинке (PiP)
 
-1. Uninstall the original YouTube app (no root required)
-2. Download and install the ATV Bridge SmartTube app: https://kutt.to/stn_bridge_atv (e.g. via _Downloader by AFTVnews_)
+YouTubePro поддерживает воспроизведение видео в режиме «картинка в картинке». Его нужно включить в _Настройки > Общие > Фоновое воспроизведение > Картинка в картинке_. Видео перейдёт в режим PiP при нажатии кнопки «домой» во время просмотра, а также при нажатии _назад_, если это включено в _Настройки > Общие > Фоновое воспроизведение (активация)_.
 
 
-**On all other Android devices**, sadly root is required to enable this:
+### Регулировка скорости
 
-1. Root your device (search for a guide for your specific device)
-2. Uninstall the official YouTube app using root (`adb shell pm uninstall com.google.android.youtube.tv`)
-3. Download and install the ATV Bridge SmartTube app: https://kutt.to/stn_bridge_atv (e.g. via _Downloader by AFTVnews_)
+Скорость воспроизведения можно изменить, нажав на значок индикатора скорости (спидометр) в верхнем ряду плеера. Выбор запоминается для всех видео. Некоторые скорости могут приводить к пропускам кадров — это известная проблема.
 
-## Contributors
 
-Major contributors to this project:
+### Голосовой поиск
 
-- [@pixkk](https://github.com/pixkk): SABR streaming, TV PoToken/Challenge generation 
-- [@Jupiops](https://github.com/Jupiops): SABR CDN support
+Для включения глобального голосового поиска рядом с YouTubePro нужно установить дополнительное приложение. Это _приложение-мост_ позволяет системному голосовому поиску открывать YouTubePro вместо стандартного приложения YouTube. Для этого нужно удалить оригинальное приложение YouTube. Мы знаем, что это неудобно, но при желании вы всегда сможете установить его обратно. _Приложение-мост_ не отображается в списке приложений и не запускается напрямую; оно используется только системным голосовым поиском. На некоторых устройствах при поиске нужно явно произносить «Youtube» (например, «youtube милые котики» вместо просто «милые котики»).
 
-## Donation
+**На Amazon Fire TV**: 
 
-If you want to support my developments you are welcome to buy me a cup of coffee :)
+1. Удалите оригинальное приложение YouTube (root не требуется)
+2. Скачайте и установите приложение Amazon Bridge для YouTubePro: https://kutt.to/stn_bridge_amazon (например, через _Downloader by AFTVnews_)
 
-- **PayPal (main)**: firsth<!-- abc@def -->ash@gmai<!-- @abc.com -->l.com  
-- [**Patreon (alternative, free)**](https://www.patreon.com/smarttube)
+
+**На Google Chromecast с Google TV**: 
+
+1. Удалите оригинальное приложение YouTube (root не требуется)
+2. Скачайте и установите приложение ATV Bridge для YouTubePro: https://kutt.to/stn_bridge_atv (например, через _Downloader by AFTVnews_)
+
+
+**На всех остальных Android-устройствах**, к сожалению, требуется root:
+
+1. Получите root-доступ (найдите руководство для вашего устройства)
+2. Удалите официальное приложение YouTube с помощью root (`adb shell pm uninstall com.google.android.youtube.tv`)
+3. Скачайте и установите приложение ATV Bridge для YouTubePro: https://kutt.to/stn_bridge_atv (например, через _Downloader by AFTVnews_)
+
+## Участники
+
+Основные участники проекта:
+
+- [@pixkk](https://github.com/pixkk): стриминг SABR, генерация TV PoToken/Challenge 
+- [@Jupiops](https://github.com/Jupiops): поддержка SABR CDN
+
+## Пожертвования
+
+Если вы хотите поддержать разработку — с радостью примите чашечку кофе :)
+
+- **PayPal (основной)**: firsth<!-- abc@def -->ash@gmai<!-- @abc.com -->l.com  
+- [**Patreon (альтернатива, бесплатно)**](https://www.patreon.com/smarttube)
 - **BTC**: 1JAT5VVWarVBkpVbNDn8UA8HXNdrukuBSx  
 - **LTC**: ltc1qgc24eq9jl9cq78qnd5jpqhemkajg9vudwyd8pw  
 - **ETH**: 0xe455E21a085ae195a097cd4F456051A9916A5064  
@@ -224,90 +222,90 @@ If you want to support my developments you are welcome to buy me a cup of coffee
 - **XMR**: 48QsMjqfkeW54vkgKyRnjodtYxdmLk6HXfTWPSZoaFPEDpoHDwFUciGCe1QC9VAeGrgGw4PKNAksX9RW7myFqYJQDN5cHGT    
 
 
-## Support
+## Поддержка
 
-**Please check the [FAQ](#faq) first!** Also at least have a short look at the recent chat history.
+**Сначала, пожалуйста, загляните в [FAQ](#faq)!** Также хотя бы коротко просмотрите недавнюю историю чата.
 
-You can report in our Telegram group or via [issue tracker on Github](https://github.com/yuliskov/SmartTube/issues) (account required).
+Сообщить о проблеме можно в нашей Telegram-группе или через [issue-трекер на GitHub](https://github.com/yuliskov/SmartTube/issues) (нужен аккаунт).
 
-- **Telegram group (international)**: [@SmartTubeEN](http://t.me/SmartTubeEN)  
-- **Discord group (international)**: [SmartTube Official](https://discord.gg/Wt8HDDej5z)  
-- **Telegram group (RU/UA)**: [@SmartTubeUA](http://t.me/SmartTubeUA)
+- **Telegram-группа (международная)**: [@SmartTubeEN](http://t.me/SmartTubeEN)  
+- **Discord-группа (международная)**: [SmartTube Official](https://discord.gg/Wt8HDDej5z)  
+- **Telegram-группа (RU/UA)**: [@SmartTubeUA](http://t.me/SmartTubeUA)
 
-The international group is in **English only**. But don't worry if your English is not perfect, we have a friendly international community.
-
-
-## Team
-
-SmartTube is developed single-handedly; there is no larger team or company behind this. This is an open source, hobby project. Several others have helped with translations, some of which can be seen on [Github](https://github.com/yuliskov/SmartTube/graphs/contributors), some have sent their translations directly to Yurii. There are also helpful people in the support chat.
+Международная группа общается **только на английском**. Но не переживайте, если ваш английский не идеален, — у нас дружное международное сообщество.
 
 
-## Build
+## Команда
+
+YouTubePro разрабатывается одним человеком; за проектом не стоит большая команда или компания. Это открытый любительский проект. Несколько человек помогали с переводами — часть из них видна на [GitHub](https://github.com/yuliskov/SmartTube/graphs/contributors), часть присылала переводы напрямую Юрию. В чате поддержки тоже есть отзывчивые люди.
+
+
+## Сборка
     
-**NOTE: OpenJDK 17 is used by the CI build (see `.github/workflows/CI.yml`). The old requirement of OpenJDK 14 or older no longer applies.**  
-To build and install debug version, run these commands:
+**ПРИМЕЧАНИЕ: CI-сборка использует OpenJDK 17 (см. `.github/workflows/CI.yml`). Прежнее требование OpenJDK 14 или старше больше не действует.**  
+Для сборки и установки отладочной версии выполните следующие команды:
 
 ```
-git clone https://github.com/yuliskov/SmartTube.git
-cd SmartTube
+git clone https://github.com/endlessbum/youtubepro.git
+cd youtubepro
 git submodule update --init
-adb connect <device_ip_address>
+adb connect <ip_адрес_устройства>
 gradlew clean installStstableDebug
 ```
 
 
-## Video codecs
+## Видеокодеки
 
-Video codecs are the algorithms used for video compression.
+Видеокодеки — это алгоритмы, используемые для сжатия видео.
 
 
-### Which codec to choose / overview
+### Какой кодек выбрать / обзор
 
-|          | recommendation                               | hardware support             | compression, bitrate\*              | quality |
+|          | рекомендация                                 | аппаратная поддержка        | сжатие, битрейт\*                    | качество |
 |:--------:|:---------------------------------------------|:---------------------------- |:----------------------:|:-------:|
-| **AV01** aka. AV1 | best choice, **if your device supports** | first devices started coming in **2020**   | **best** <small>(e.g. 1.6 Mbps)</small>   | same   |
-| **VP9**  | **best choice on most devices**         | most devices **since 2015** | **better** <small>(e.g. 2.1 Mbps)</small> | same   |
-| AVC  | only for old or slow hardware | **all** devices             | good <small>(e.g. 2.7 Mbps)</small>   | same   |
+| **AV01** aka. AV1 | лучший выбор, **если устройство поддерживает** | первые устройства появились в **2020**   | **лучший** <small>(напр. 1.6 Мбит/с)</small>   | то же   |
+| **VP9**  | **лучший выбор на большинстве устройств**    | большинство устройств **с 2015** | **лучше** <small>(напр. 2.1 Мбит/с)</small> | то же   |
+| AVC  | только для старого или медленного железа | **все** устройства          | хорошо <small>(напр. 2.7 Мбит/с)</small>   | то же   |
 
 
-<small>\* Examples taken from the video-only track at 1080p @ 25fps for this video: [Dua Lipa - New Rules (Official Music Video)](https://youtube.com/watch?v=k2qgadSvNyU)</small>
+<small>\* Примеры взяты из видеодорожки (только видео) в 1080p @ 25fps для этого видео: [Dua Lipa - New Rules (Official Music Video)](https://youtube.com/watch?v=k2qgadSvNyU)</small>
 
-At the same resolution, a **lower bitrate is better!** YouTube explicitly targets the **same quality** regardless of the codec. Older codecs have a higher bitrate only because they are less efficient. On Youtube, you **do not** get better quality by simply choosing a higher bitrate. Newer codecs have a better compression = lower bitrate = use less bandwidth = save the environment. This is a feature, not a bug. You should use the newest codec that works smoothly on your device, not the least efficient one. AVC usually has the highest bitrate. This is bad, not good.
+При одинаковом разрешении **чем ниже битрейт, тем лучше!** YouTube целенаправленно обеспечивает **одинаковое качество** независимо от кодека. Старые кодеки имеют более высокий битрейт только потому, что они менее эффективны. На YouTube **нельзя** получить лучшее качество, просто выбрав более высокий битрейт. Новые кодеки лучше сжимают = ниже битрейт = меньше трафика = экономия ресурсов. Это возможность, а не баг. Используйте самый новый кодек, который плавно работает на вашем устройстве, а не самый неэффективный. У AVC обычно самый высокий битрейт. Это плохо, а не хорошо.
 
 
-### Which quality to choose?
+### Какое качество выбрать?
 
-Currently, there is no automatic mode based on your bandwidth. But you can configure a default video preset yourself under settings \> video player \> video presets. The first option ("none") will remember your last selection within the video player. Any other preset is used initially for each video; if the selected profile is not available, the next best available option is used. You can still override the profile on each video individually within the player.
+Сейчас нет автоматического режима на основе вашей пропускной способности. Но вы можете сами настроить видео-профиль по умолчанию в настройках \> видеоплеер \> видео-профили. Первый вариант («нет») запоминает ваш последний выбор внутри плеера. Любой другой профиль используется изначально для каждого видео; если выбранный профиль недоступен, берётся следующий лучший доступный вариант. В плеере вы по-прежнему можете переопределить профиль для каждого видео отдельно.
 
-To decide the optional resolution / video quality for you, you need to consider a few limiting factors:
-- Your bandwidth (choose only up to the bitrate that your bandwidth can handle; you can do a speedtest using [fast.com](https://fast.com) by Netflix)
-- Your TV's display resolution (the quality **might slightly** improve, if you select the next higher resolution, e.g. 1080p on a 720p display; but don't expect a big difference)
-- Your TV's capabilities (e.g. HDR, 60fps)
+Чтобы выбрать оптимальное разрешение / качество видео, учтите несколько ограничивающих факторов:
+- Ваша пропускная способность (выбирайте только до того битрейта, который выдерживает ваш канал; скорость можно проверить через [fast.com](https://fast.com) от Netflix)
+- Разрешение экрана телевизора (качество **может немного** улучшиться при выборе следующего, более высокого разрешения, например 1080p на экране 720p; но не ждите большой разницы)
+- Возможности телевизора (например, HDR, 60fps)
 
-Generally 60fps is an improvement, but if you personally don't notice (or mind) the difference, you can save bandwidth (and the environment) by not choosing 60fps.
+В целом 60fps — это улучшение, но если вы лично не замечаете разницы (или она вам не важна), можно сэкономить трафик, не выбирая 60fps.
 
 
 ### HDR
 
-HDR works only **if your hardware supports it**. It's a complicated mess:
-- Your TV must support it
-- If you use a TV box, that TV box **and** your TV cable **and** the TV must support HDR
-- Yes, there truly are different HDMI cable versions with different HDR-support, it's complicated
-- some devices (like the **NVIDIA Shield**) generally support HDR, but **not** the specific HDR format that is used on YouTube :cry:
+HDR работает только **если ваше железо его поддерживает**. Это запутанная история:
+- Телевизор должен поддерживать HDR
+- Если вы используете приставку, то и приставка, **и** кабель телевизора, **и** сам телевизор должны поддерживать HDR
+- Да, реально существуют разные версии HDMI-кабелей с разной поддержкой HDR, всё непросто
+- некоторые устройства (например, **NVIDIA Shield**) в целом поддерживают HDR, но **не** конкретный формат HDR, используемый на YouTube :cry:
  
-If HDR videos look dim or washed out, then check [this article](https://www.wired.com/story/hdr-too-dark-how-to-fix-it/). **If HDR is not working**, it's probably not this app's fault. You might need to search on the web for "HDR" and your device name for any help.
+Если HDR-видео выглядит тусклым или выцветшим, прочитайте [эту статью](https://www.wired.com/story/hdr-too-dark-how-to-fix-it/). **Если HDR не работает**, скорее всего, виновато не приложение. Возможно, стоит поискать в интернете «HDR» вместе с названием вашего устройства.
 
-## Liability
+## Ответственность
 
-We take no responsibility for the use of our tool, or external instances
-provided by third parties. We strongly recommend you abide by the valid
-official regulations in your country. Furthermore, we refuse liability 
-for any inappropriate use of third-party services.
-This tool is provided to you in the spirit of free, open software.
+Мы не несём ответственности за использование нашего инструмента или внешних
+экземпляров, предоставленных третьими сторонами. Мы настоятельно рекомендуем
+соблюдать действующие официальные правила вашей страны. Кроме того, мы снимаем
+с себя ответственность за любое ненадлежащее использование сторонних сервисов.
+Этот инструмент предоставляется вам в духе свободного открытого ПО.
 
-You may view the LICENSE in which this software is provided to you [here](./LICENSE).
+Лицензию, на условиях которой предоставляется это ПО, можно посмотреть [здесь](./LICENSE).
 
->   16. Limitation of Liability.
+>   16. Ограничение ответственности.
 >
 > IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
@@ -321,186 +319,182 @@ SUCH DAMAGES.
 
 ## FAQ
 
-### Q: Videos buffer a LOT
+### В: Видео очень сильно буферизуются
 
-A: Try to switch to encrypted DNS like NextDNS. You can set-up such DNS either automatically or manually. To automatic set-up you can use the [Intra apk at fdroid](https://f-droid.org/en/packages/app.intra/) and the ["AutoStart - No root"](https://play.google.com/store/apps/details?id=com.autostart) apk to make it autolaunch after every TV restart. For manual set-up [use this guide](https://www.reddit.com/r/MiBox/s/7esEVGtAAa).
+О: Попробуйте перейти на зашифрованный DNS, например NextDNS. Такой DNS можно настроить автоматически или вручную. Для автоматической настройки можно использовать [Intra с F-Droid](https://f-droid.org/en/packages/app.intra/) и apk [«AutoStart - No root»](https://play.google.com/store/apps/details?id=com.autostart), чтобы он запускался после каждой перезагрузки TV. Для ручной настройки [используйте это руководство](https://www.reddit.com/r/MiBox/s/7esEVGtAAa).
 
-### Q: There is no result for the search that I say (Android 11)
+### В: Поиск не выдаёт результатов по моему запросу (Android 11)
 
-A: They're some reports that the latest update for "Google app for Android TV" could cause this bug. Deleting the update should fix the problem.
+О: Есть сообщения, что последнее обновление «Google app for Android TV» может вызывать этот баг. Удаление обновления должно помочь.
 
 
-### Q: AV01 does not play / Why is VP9 slow on my device?
+### В: AV01 не воспроизводится / Почему VP9 медленный на моём устройстве?
 
-A: Because AV01 is very new, **most** TVs and TV boxes **do not** offer hardware support and **cannot** play AV01 **at all**.
+О: Поскольку AV01 очень новый, **большинство** телевизоров и приставок **не имеют** аппаратной поддержки и **вообще не могут** воспроизводить AV01.
 
-If your device has hardware support for a codec, videos using that codec should play smoothly. High resolutions might also be slow in VP9 on cheap TV boxes that don't officially support 4k. Your device probably can play VP9 videos even without hardware support, however this requires a powerful CPU to run smoothly. Fixing AV01 without hardware support is technically possible, but currently not planned and probably not efficient enough.
+Если у устройства есть аппаратная поддержка кодека, видео с этим кодеком должны идти плавно. Высокие разрешения также могут тормозить в VP9 на дешёвых приставках, официально не поддерживающих 4k. Скорее всего, ваше устройство способно воспроизводить VP9 даже без аппаратной поддержки, но для плавности нужен мощный процессор. Исправить AV01 без аппаратной поддержки технически возможно, но пока не планируется и, вероятно, недостаточно эффективно.
 
 
-### Q: Can you make SmartTube look like the original app?
+### В: Можете сделать YouTubePro похожим на оригинальное приложение?
 
-A: Compared to SmartTube's UI, Stock Youtube and YT Kids are far ahead. However, we'd need someone who's skilled and willing to dedicate enough time and energy into making it. And into maintaining it longterm (incl. new features, bug fixes). All of this for free. If you are / got someone like that, please help.
-Not to mention that SmartTube follows Google's official template & recommendations for Android TV apps. It's Google's fault that the template is somewhat ugly. 😂
+О: По сравнению с интерфейсом YouTubePro, обычный YouTube и YT Kids сильно впереди. Однако нужен человек, обладающий навыками и готовый вложить достаточно времени и сил в создание такого интерфейса. И в его долгосрочную поддержку (включая новые функции и исправления багов). И всё это бесплатно. Если у вас есть или появился такой человек — помогите, пожалуйста.
+К слову, YouTubePro следует официальному шаблону и рекомендациям Google для приложений Android TV. Это вина Google, что шаблон отчасти некрасивый. 😂
 
 
-### Q: Can the search page be improved?
+### В: Можно ли улучшить страницу поиска?
 
-A: It can be, but it takes someone to do it, similar to the above FAQ-entry. SmartTube is following Google's officially recommended design/template for TV apps and is using the official, preinstalled Android TV keyboard. Sadly, Google did a really bad job regarding the search page and keyboard. Maybe a future SmartTube update can add an embedded keyboard, similar to the original YouTube or other major Android TV apps. Maybe it can improve the looks to be as good or better than in the official YouTube app. But for now, it is the way it is due to lack of time and due to Google's official recommendations being bad.
+О: Можно, но нужно, чтобы кто-то это сделал — аналогично предыдущему пункту FAQ. YouTubePro следует официально рекомендованному Google дизайну/шаблону для TV-приложений и использует официальную предустановленную клавиатуру Android TV. К сожалению, Google сделал страницу поиска и клавиатуру очень плохо. Возможно, будущее обновление YouTubePro добавит встроенную клавиатуру, как в оригинальном YouTube или других крупных приложениях Android TV. Возможно, удастся сделать внешний вид таким же хорошим или лучше, чем в официальном приложении YouTube. Но пока всё так, как есть: не хватает времени, а официальные рекомендации Google плохи.
 
 
-### Q: Can I install this on a Samsung Tizen TV / LG webOS TV / Roku / iOS / toaster?
+### В: Можно ли установить это на Samsung Tizen TV / LG webOS TV / Roku / iOS / тостер?
 
-A: No, this only works on **Android** devices. If you look at an Android TV's product page, it usually says clearly that it's based on Android. The app **cannot** easily be ported over to other platforms and we have no plans to even try. **Please do not ask**. Instead, you can connect a separate TV stick or TV box to your TV.
+О: Нет, это работает только на **Android**-устройствах. На странице продукта любого Android TV обычно прямо указано, что он работает на Android. Приложение **нельзя** просто портировать на другие платформы, и мы даже не собираемся пытаться. **Пожалуйста, не спрашивайте**. Вместо этого подключите к телевизору отдельный TV-стик или TV-приставку.
 
 
-### Q: Can I install this on a smartphone? / Can you add portrait mode? / Scrolling doesn't work.
+### В: Можно ли установить это на смартфон? / Добавите портретный режим? / Не работает прокрутка.
 
-A: **Big No**. This app is **not** for smartphones, we offer **zero support** for that.
+О: **Твёрдое нет**. Это приложение **не для смартфонов**, мы обеспечиваем **нулевую поддержку** таких сценариев.
 
-You **can cast** videos **from** your smartphone to a TV / TV box running SmartTube, though. Just use the official YouTube app, [Morphe](https://github.com/MorpheApp) or [ReVanced](https://github.com/ReVanced), see [the casting section](#casting) for more information.
+Но вы **можете транслировать** видео **с** смартфона на телевизор / приставку с YouTubePro. Просто используйте официальное приложение YouTube, [Morphe](https://github.com/MorpheApp) или [ReVanced](https://github.com/ReVanced), подробнее в [разделе о трансляции](#трансляция-cast).
 
-**There will not be a phone version.** You can use [Morphe](https://github.com/MorpheApp), [ReVanced](https://github.com/ReVanced), [Pure Tuber](https://play.google.com/store/apps/details?id=free.tube.premium.advanced.tuber), [LibreTube](https://github.com/libre-tube/LibreTube), [NewTube](https://github.com/aleixrodriala/newtube), [NewPipe](https://newpipe.schabi.org), or [NewPipe x SponsorBlock](https://github.com/polymorphicshade/NewPipe#newpipe-x-sponsorblock) instead. Please go to their respective support chats for help.
+**Версии для телефонов не будет.** Вместо этого можно использовать [Morphe](https://github.com/MorpheApp), [ReVanced](https://github.com/ReVanced), [Pure Tuber](https://play.google.com/store/apps/details?id=free.tube.premium.advanced.tuber), [LibreTube](https://github.com/libre-tube/LibreTube), [NewTube](https://github.com/aleixrodriala/newtube), [NewPipe](https://newpipe.schabi.org) или [NewPipe x SponsorBlock](https://github.com/polymorphicshade/NewPipe#newpipe-x-sponsorblock). За помощью обращайтесь в их чаты поддержки.
 
 
-### Q: Can I install this on a tablet / car screen / smartphone with docking station?
+### В: Можно ли установить это на планшет / экран в автомобиле / смартфон с док-станцией?
 
-Yes... maybe.. Requirements:
+Да... возможно.. Требования:
 
-- It is an Android device
-- It has a large screen
-- It has a TV remote, controller, or keyboard
-  **Touch input is not supported.** Mouse/touchpad scrolling neither. You cannot properly use SmartTube with only touch or mouse input.
+- Это Android-устройство
+- У него большой экран
+- Есть ТВ-пульт, геймпад или клавиатура
+  **Сенсорный ввод не поддерживается.** Прокрутка мышью/тачпадом тоже. Полноценно использовать YouTubePro только с сенсорным вводом или мышью нельзя.
 
-Some users reported great success (incl. on a [car entertainment system](https://t.me/SmartTubeEN/6060)). **Please share your success stories with us.**
+Некоторые пользователи сообщали об успехе (в том числе на [мультимедиа-системе автомобиля](https://t.me/SmartTubeEN/6060)). **Делитесь своими историями успеха с нами.**
 
 
-### Q: I get "unknown codec" / "can't download video" errors
+### В: Ошибки «неизвестный кодек» / «не удаётся скачать видео»
 
-A: please wait 5 seconds for the video to play. If that doesn't help, press the play button. Some users reported, that this issue only appears when they have a USB audio device attached or if their disk storage is full.
+О: подождите 5 секунд, пока видео начнёт играть. Если не помогло — нажмите кнопку воспроизведения. Некоторые пользователи сообщали, что проблема возникает только при подключённом USB-аудио устройстве или при заполненном диске.
 
 
-### Q: I get "the video profile is not supported"
+### В: Ошибка «профиль видео не поддерживается»
 
-A. Press the "HQ"-button in the bottom-left, select _video formats_ and select anything other than AV01. AV01 is **not supported** on most devices (apparently including yours), so select VP9 instead. See [the section on video codecs](#Video-codecs) for more information.
+О: Нажмите кнопку «HQ» слева внизу, выберите _форматы видео_ и выберите что угодно, кроме AV01. AV01 **не поддерживается** на большинстве устройств (видимо, включая ваше), поэтому выберите VP9. Подробнее в [разделе о видеокодеках](#видеокодеки).
 
 
-### Q: I get "video unavailable" when watching unlisted videos / my own videos
+### В: Ошибка «видео недоступно» при просмотре скрытых видео / моих собственных видео
 
-A: Right, that's currently a bug.
+О: Да, это текущий баг.
 
 
-### Q: It doesn't show up on my casting list
+### В: Приложение не появляется в списке устройств для трансляции
 
-A: Please read the [Casting](#casting) section.
+О: Прочитайте раздел [Трансляция (Cast)](#трансляция-cast).
 
-### Q: I get an error saying "Sign in to confirm you're not a bot"
+### В: Ошибка «Войдите, чтобы подтвердить, что вы не робот»
 
-A: Your IP address range might be temporarily/permanently blocked by YouTube from watching videos if you not signed in to your account.
+О: Диапазон вашего IP-адреса может быть временно или навсегда заблокирован YouTube для просмотра видео, если вы не вошли в свой аккаунт.
 
-### Q: The video is buffering a lot
+### В: Видео постоянно буферизуется
 
-A: The issue might not be specific to SmartTube, as other unofficial YouTube apps also report this issue. It seems uncommon nowadays, but was very present in the 2nd quarter of 2021. Some users or devices seem to be more affected than others. The official YouTube app & website are apparently only rarely affected. The root cause of the issue is currently unclear, but it appears to be a server-side thing on YouTube's end. Possibly, YouTube is discriminating 3rd party apps.
+О: Проблема может быть не специфична для YouTubePro — её же отмечают другие неофициальные приложения YouTube. Сейчас это редкость, но во 2-м квартале 2021 года было очень распространено. У некоторых пользователей или устройств проблема проявляется сильнее. Официальное приложение и сайт YouTube, судя по всему, затронуты редко. Корневая причина пока неясна, похоже, это серверная особенность YouTube. Возможно, YouTube дискриминирует сторонние приложения.
 
-For now, try to see if it helps to:
+Пока попробуйте проверить, помогает ли:
+- Снизить разрешение (или вернуть обратно)
+- Сменить формат видео на AVC
+- Увеличить буфер в настройках
+- Нажать «назад» и запустить видео снова
 
-- Reduce the resolution (or change it back)
-- Change the video format to AVC
-- Increase the buffer in the settings
-- Hit the back button and try playing the video again
 
+### В: Отладочная информация говорит, что мой экран 1080p, но у меня 4k/UHD!
 
-### Q: The debug information says my display is 1080p, but I have a 4k/UHD display!
+О: Не волнуйтесь, **отладочная информация неверна.** YouTubePro отлично работает и выше 1080p — вы сами это увидите при воспроизведении видео в 4k или UHD.
+Также не волнуйтесь, если указано «720p», а у вас экран 1080p.
 
-A: Do not worry, **the debug information is incorrect.** SmartTube works fine even above 1080p and you should be able to see that, when you play a video in 4k or UHD.
-Also do not worry if it says "720p" and you have a 1080p display.
 
+### В: Почему не выбирается автоматически максимальное качество?
 
-### Q: Why does it not autoselect highest quality?
+О: **Выбирается** (по умолчанию). Если вы задали _видео-профиль_ в настройках, он выступает потолком для автоматического выбора. Проверьте, не настроен ли у вас видео-профиль; снять его можно, выбрав «нет».
 
-A: **It does** (by default). If you set a _video profile_ under settings, that acts as a maximum for automatic selection. Check if you configured a video profile, you can unset it by choosing "none".
+**Не путайте качество с битрейтом.** Подробнее в [разделе о видеокодеках](#видеокодеки).
 
-**Please do not confuse quality with bitrate**. See [the section on video codecs](#Video-codecs) for more information.
 
+### В: Можно ли задать (максимальное) разрешение по умолчанию?
 
-### Q: Can I set a (maximum) resolution by default?
+О: YouTubePro автоматически выбирает максимальное доступное качество для видео, вплоть до максимального разрешения, которое можно задать в настройках в разделе «видео-профиль». Если доступно, будет выбран заданный видео-профиль, иначе — следующий лучший доступный. В любом случае профиль можно изменить прямо во время просмотра.
 
-A: SmartTube automatically select the highest available quality for your video, up to a maximum resolution that you can set in the settings under "video profile". If available, SmartTube will pick the selected video profile, or otherwise the next best one available will be used. You can still always change the video profile while watching videos.
 
+### В: Может ли разрешение быть «авто», в зависимости от моей пропускной способности?
 
-### Q: Can it set the resolution to "auto", depending on my available bandwidth?
+О: Это запланировано, но пока недоступно (извините 🙇‍♀️). Впрочем, можно задать максимальное разрешение, подходящее вашему каналу. Подробнее выше.
 
-A: This is planned, but not available yet (sorry 🙇‍♀️). However, you can set a maximum resolution to something that should work for your bandwidth. See above for details.
 
+### В: Почему приложение пропускает фрагменты видео?
 
-### Q: Why does it skip video segments?
+О: В YouTubePro есть функция **SponsorBlock**. Можно выбрать, какие категории пропускать, если вообще нужно. Подробнее в [разделе SponsorBlock](#sponsorblock).
 
-A: SmartTube has a feature called **SponsorBlock**. You can select which categories should be skipped, if any. See the [SponsorBlock section](#sponsorblock) for more details.
 
+### В: Как включить автоплей следующего видео / остановку после каждого видео?
 
-### Q: How to start the next video automatically / stop after every video?
+О: Переключайтесь между режимами автовоспроизведения кнопкой «повтор» 🔁
 
-A: You can switch between different autoplay-modes using the loop-button 🔁
+[![скриншот кнопки повтора](images/new/V3GHGvWprmdE1w.jpg)](https://t.me/SmartTubeEN/24953)
 
-[![screenshot showing the loop-button](images/new/V3GHGvWprmdE1w.jpg)](https://t.me/SmartTubeEN/24953)
 
+### В: Как убрать нерелевантные мне рекомендованные видео (например, новости)?
 
-### Q: How to remove recommended videos (e.g. news) that are unrelated to me?
+О: Рекомендации определяются YouTube, а не приложением — мы не можем изменить алгоритм. Они основаны на вашей стране, которую можно сменить в настройках. Если вы вошли в аккаунт, они основаны на истории просмотра, данных профиля и прочем, что Google использует. Если вы не вошли — вы как в «режиме инкогнито», и история просмотра не влияет на рекомендации. Возможно, будущая версия добавит опциональное профилирование без входа в аккаунт.
 
-A: Recommended videos are defined by YouTube and not by the app, we cannot change the algorithm. They are based on your country, which you can change in the settings. If you are logged in, they are based on your watch history, user profile data, and whatever else Google might use. If you are not logged in, you are like in "incognito mode", so your watch history does not influence your recommendations. Maybe a future version will add optional user profiling without logging in.
 
+### В: Работает ли HDR?
 
-### Q: Does HDR work?
+О: Да, HDR работает, **если ваше железо** его поддерживает. **NVIDIA Shield** — нет. Подробнее в [разделе о HDR](#hdr).
 
-A: Yes, HDR works **if your hardware** supports it. The **NVIDIA Shield** does not. See [the section on HDR](#HDR) for more information.
 
+### В: Почему в changelog некоторых обновлений написано «не обновляйтесь, если вас всё устраивает»?
 
-### Q: Why do some updates say "don't update if satisfied with the current version" in the changelog?
+О: Такие обновления сильно меняют код в попытке исправить баги, затрагивающие лишь некоторых пользователей/устройства. Обновляться должны только затронутые пользователи. Остальным обновление не даёт ничего, кроме шанса получить новые баги. Не переживайте, если всё же обновились.
 
-A: These updates change a lot of code, trying to fix bugs that only affect a few users/devices. Only the affected users should update. For anyone else, there is nothing to gain from updating; however there is the chance of causing new bugs. Do not worry if you updated anyways.
 
+### В: При воспроизведении на других скоростях пропускаются кадры!
 
-### Q: When playing at other speeds, frames are skipped!
+О: Сейчас мы не можем это исправить, извините.
 
-A: We currently cannot fix this, sorry.
 
+### В: Что такое AFR?
 
-### Q: What is AFR?
+О: «Auto Frame Rate» (автоматическая частота кадров). Функция подстраивает частоту обновления телевизора под просматриваемый контент. Она может немного улучшить плавность, но разница очень мала; большинство людей её едва замечает. Не на каждом железе работает хорошо. Если вы не знаете, что она делает, и не хотите проверять — спокойно держите её выключенной.
 
-A: "Auto Frame Rate". It adjusts the refresh rate of your TV to match the content you're watching. It can slightly improve the smoothness, but the difference is very small; most people barely notice it. It does not work well on every hardware. If you don't know what it does and don't want to test it out yourself, you can safely keep it off.
+**Рекомендация:** включите, чтобы проверить, работает ли она на вашем устройстве; если вызывает проблемы (или не хотите тестировать) — выключите.
 
-**Recommendation:** You can turn it on to see if it works on your device; if it causes issues (or if you don't care to test), turn it **off**.
 
+### В: Какой буфер выбрать — большой или маленький?
 
-### Q: Should I choose high or low buffer?
+О: Чем больше буфер, тем больше видео будет предзагружено впереди текущей позиции. Маленький буфер может немного снизить расход трафика, если вы часто закрываете видео до конца. Большой буфер сглаживает сетевые проблемы и не даёт видео останавливаться для подгрузки. Больший буфер увеличивает потребление памяти, но это не должно быть проблемой.
 
-A: The higher your buffer, the more of a video will be preloaded ahead of your current position. A low buffer might minimally reduce your bandwidth usage, if you often close videos before they end. A high buffer can smooth out network issues and prevent the video from pausing to buffer. A higher buffer increases RAM usage, however this shouldn't be an issue.
+**Рекомендация: большой**.
 
-**Recommendation: high**.
 
+### В: Сохраняется ли буфер при перемотке назад?
 
-### Q: Can I retain the buffer when seeking back?
+О: Нет: когда вы перематываете назад (например, на 5 секунд), YouTubePro придётся заново буферизовать. Это может быть улучшено в будущих обновлениях.
 
-A: No, when you seek back (e.g. jump back 5 seconds), SmartTube will have to rebuffer. This might be improved in a future update.
 
+### В: Устройство зависает при просмотре YouTube
 
-### Q: My device freezes when watching YouTube
+О: Это проблема прошивки или Android. Если у вас кастомная прошивка, возможно, в ней баг. Отладить такое разработчику практически невозможно, поэтому мы не сможем помочь, извините. Можно попробовать стандартные меры: перезагрузка, очистка кэша, переустановка приложения или сброс устройства к заводским настройкам.
 
-A: That's a firmware or Android issue. If you are using a custom rom, maybe that rom is buggy. Because this issue is nearly impossible for the developer to debug, we cannot help you, sorry. You can try the usual workarounds: rebooting, clearing cache, reinstalling the app, or factory resetting the device.
 
+### В: Можно ли скачивать видео?
 
-### Q: Can I download videos?
+О: Нет, в YouTubePro такой функции нет.
 
-A: Not with SmartTube
 
+### В: Могут ли обновления устанавливаться автоматически?
 
-### Q: Can updates be installed automatically?
+О: Нет, технически это невозможно. Нужное разрешение есть только у предустановленного менеджера приложений (обычно Google Play Store, Amazon AppStore и т.п.). Все остальные приложения, включая YouTubePro, могут лишь показать окно установки. Обход через root возможен, но пока не реализован.
 
-A: No, this is technically not possible. Only the preinstalled app manager (usually Google PlayStore, Amazon AppStore, etc) has the required permission. All other apps, incl. SmartTube can only show open installation prompt. A workaround using root would be possible, but hasn't been implemented yet.
 
+### В: Можно ли отключить блокировку рекламы на некоторых каналах?
 
-### Q: Can I whitelist ads on some channels?
-
-A: No, this is not possible. SmartTube does not have any code to display ads. Adding this functionality would actually take time and effort, which is instead spent on adding useful features and fixing bugs.
-
-
-
+О: Нет, это невозможно. В YouTubePro вообще нет кода для показа рекламы. Добавление такой функциональности заняло бы время и силы, которые вместо этого тратятся на полезные функции и исправление багов.

@@ -1,42 +1,42 @@
-# Privacy Policy for YouTubePro (F-Droid Build)
+# Политика конфиденциальности YouTubePro (сборка F-Droid)
 
-**Last Updated:** March 21, 2026
+**Последнее обновление:** 21 марта 2026
 
-This Privacy Policy applies specifically to the **F-Droid flavor** of YouTubePro (Package ID: `app.youtubepro.fdroid`). This version is specifically hardened for user privacy and compliance with F-Droid’s inclusion policy.
+Эта политика конфиденциальности относится конкретно к **сборке F-Droid** приложения YouTubePro (ID пакета: `app.youtubepro.fdroid`). Эта версия специально усилена в плане конфиденциальности и соответствия правилам включения в F-Droid.
 
-## 1. Scope of this Policy
-This document covers the **F-Droid build** only. Other versions or "flavors" of the application (e.g., Stable, Beta) may contain additional features such as self-update mechanisms or crash reporting that are removed in this specific F-Droid release.
+## 1. Область действия политики
+Документ охватывает **только сборку F-Droid**. Другие варианты (сборки) приложения (например, Stable, Beta) могут содержать дополнительные функции, такие как механизм самообновления или отчёты о сбоях, которые убраны в этой сборке F-Droid.
 
-## 2. Data Collection and Processing
-* **No Backend:** The F-Droid build of YouTubePro operates entirely as a client-side application. It does not communicate with any developer-controlled servers.
-* **No Telemetry or Analytics:** This version contains no tracking code, telemetry, or analytics frameworks (e.g., no Firebase, no Crashlytics). We do not monitor how you use the app.
-* **No Update Tracking:** The self-update mechanism is disabled in this flavor. Updates are handled exclusively through the F-Droid client.
+## 2. Сбор и обработка данных
+* **Нет собственного сервера:** сборка F-Droid приложения YouTubePro полностью клиентская. Она не взаимодействует с серверами разработчика.
+* **Нет телеметрии и аналитики:** эта версия не содержит кода отслеживания, телеметрии или аналитических фреймворков (нет Firebase, нет Crashlytics). Мы не отслеживаем, как вы используете приложение.
+* **Нет отслеживания обновлений:** механизм самообновления в этой сборке отключён. Обновления выполняются исключительно через клиент F-Droid.
 
-## 3. Third-Party Services (YouTube/Google)
-* **Authentication:** When you sign in, the application uses the official Google OAuth 2.0 flow. This is a secure method that allows you to authorize the app without sharing your password with the developer.
-* **Local Storage:** Authentication tokens are stored exclusively on your device's secure local storage. They are never transmitted to, or stored by, the developer.
-* **Data Flow:** Video data and account information are fetched directly from YouTube/Google servers to your device.
+## 3. Сторонние сервисы (YouTube/Google)
+* **Аутентификация:** при входе приложение использует официальный процесс Google OAuth 2.0. Это безопасный метод, позволяющий авторизовать приложение без передачи пароля разработчику.
+* **Локальное хранение:** токены аутентификации хранятся исключительно в защищённом локальном хранилище вашего устройства. Они никогда не передаются разработчику и не хранятся им.
+* **Поток данных:** данные видео и аккаунта запрашиваются напрямую с серверов YouTube/Google на ваше устройство.
 
-## 4. Community-Driven Services & Third-Party APIs
-To provide core functionality and enhanced features, the application communicates with the following community-driven services:
-* **SponsorBlock:** The app sends the ID of the video being viewed to the SponsorBlock API to retrieve crowd-sourced skip segments.
-* **DeArrow:** The app sends the ID of the video being viewed to the DeArrow API to retrieve crowd-sourced titles.
-* **Return YouTube Dislike (RYD):** The app sends the Video ID to the RYD API to retrieve estimated dislike counts.
-* **Anonymous Metadata Requests:** These requests are "read-only" and do not include personal identifiers, Google account tokens, or user-specific profile data. 
-* **General API Communication:** The application may communicate with other third-party infrastructure (such as official YouTube/Google endpoints) solely to fetch media content and metadata required for the application to function. These functional requests do not involve the collection or storage of personal user data by the developer.
+## 4. Сервисы сообщества и сторонние API
+Для обеспечения основной функциональности и расширенных возможностей приложение взаимодействует со следующими сервисами сообщества:
+* **SponsorBlock:** приложение отправляет ID просматриваемого видео в API SponsorBlock, чтобы получить добавленные сообществом сегменты для пропуска.
+* **DeArrow:** приложение отправляет ID просматриваемого видео в API DeArrow, чтобы получить добавленные сообществом заголовки.
+* **Return YouTube Dislike (RYD):** приложение отправляет ID видео в API RYD, чтобы получить предполагаемое количество дизлайков.
+* **Анонимные запросы метаданных:** эти запросы являются «только для чтения» и не содержат персональных идентификаторов, токенов аккаунта Google или пользовательских данных профиля.
+* **Общая связь с API:** приложение может взаимодействовать с прочей сторонней инфраструктурой (например, официальными конечными точками YouTube/Google) исключительно для загрузки медиаконтента и метаданных, необходимых для работы приложения. Эти функциональные запросы не предполагают сбор или хранение персональных данных пользователя разработчиком.
 
-## 5. Automated Decision-Making and Profiling
-In accordance with **GDPR Article 15**, we confirm for this build:
-* **No Profiling:** We do not track user behavior to build profiles.
-* **No Automated Decisions:** The app does not use algorithms or AI to make decisions about users or to manipulate content ranking. Content is served as-is from the YouTube API.
+## 5. Автоматизированное принятие решений и профилирование
+В соответствии со **статьёй 15 GDPR** подтверждаем для этой сборки:
+* **Нет профилирования:** мы не отслеживаем поведение пользователей для построения профилей.
+* **Нет автоматизированных решений:** приложение не использует алгоритмы или ИИ для принятия решений о пользователях или управления ранжированием контента. Контент отдаётся «как есть» из API YouTube.
 
-## 6. External Links & Donations
-The application contains static links and addresses for project documentation (GitHub) and donations (e.g., PayPal, Patreon, Bitcoin, Ethereum, and other cryptocurrencies).
-* **Manual Action Only:** These links do not trigger automatically. No data is transmitted until the user manually clicks a link or copies an address.
-* **Third-Party Policies:** Once you leave the application to a donation platform or use a third-party wallet, your data is governed by the privacy policy of those respective services.
+## 6. Внешние ссылки и пожертвования
+Приложение содержит статические ссылки и адреса документации проекта (GitHub) и пожертвований (например, PayPal, Patreon, Bitcoin, Ethereum и другие криптовалюты).
+* **Только ручное действие:** эти ссылки не срабатывают автоматически. Никакие данные не передаются, пока вы сами не нажмёте на ссылку или не скопируете адрес.
+* **Политики сторонних сервисов:** после ухода из приложения на платформу пожертвований или использования стороннего кошелька ваши данные регулируются политиками конфиденциальности соответствующих сервисов.
 
-## 7. Your Rights (GDPR / CCPA)
-Because this specific build flavor does not store or transmit personal data to the developer, we hold no identifiable records (names, emails, IPs) associated with your identity. Therefore, we have no data to provide or delete upon request.
+## 7. Ваши права (GDPR / CCPA)
+Поскольку эта сборка не хранит и не передаёт персональные данные разработчику, у нас нет записей, связанных с вашей личностью (имена, email, IP-адреса). Следовательно, у нас нет данных, которые можно было бы предоставить или удалить по запросу.
 
-## 8. Contact
-For technical inquiries regarding the privacy architecture of the F-Droid build, please open an issue on the official GitHub repository.
+## 8. Контакты
+По техническим вопросам, связанным с архитектурой конфиденциальности сборки F-Droid, создайте issue в официальном репозитории GitHub.
